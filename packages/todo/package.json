@@ -1,0 +1,14 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "next dev",
+    "build": "next build",
+    "real": "next start",
+    "tsc": "tsc",
+    "test": "TZ=UTC jest --watch --maxWorkers=2",
+    "test_ci": "TZ=UTC jest --maxWorkers=2",
+    "lint": "next lint && stylelint **/*.scss --config .stylelintrc.js"
+  }
+}

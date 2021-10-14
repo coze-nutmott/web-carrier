@@ -1,0 +1,18 @@
+import React, { useState } from 'react';
+import TestItem from 'shared/uiTest/component/TestItem';
+import { CheckBox } from 'common/component/shared';
+
+export default function TestCheckBox() {
+  const [isChecked, setIsChecked] = useState(true);
+  return (
+    <TestItem title="variant">
+      <CheckBox
+        id="alarm"
+        text="알림 받기"
+        textVariant="s16_regular_black"
+        checked={isChecked}
+        onChange={() => setIsChecked(!isChecked)}
+      />
+    </TestItem>
+  );
+}
