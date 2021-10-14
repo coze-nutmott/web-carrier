@@ -1,0 +1,18 @@
+{
+  "search.exclude": {
+    ".next": true,
+    "**/__snapshots__": true,
+    "**/*.js": true,
+    "**/node_modules": true
+  },
+  "json.format.enable": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "stylelint.enable": true
+}

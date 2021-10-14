@@ -1,0 +1,16 @@
+{
+  "name": "5-test-babel-custom-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "babel example.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "7.15.7",
+    "@babel/core": "7.15.8"
+  }
+}

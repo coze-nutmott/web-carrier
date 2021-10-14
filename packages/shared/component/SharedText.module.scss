@@ -1,0 +1,10 @@
+.text {
+  white-space: pre-wrap;
+  word-break: break-all;
+
+  @supports (word-break: break-word) {
+    & {
+      word-break: break-word;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "shared",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "TZ=UTC jest --watchAll --maxWorkers=2",
+    "test_ci": "TZ=UTC jest --maxWorkers=2"
+  }
+}

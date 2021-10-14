@@ -1,0 +1,59 @@
+body {
+  // 가로모드 자동 폰트크기 조절 방지
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -o-text-size-adjust: none;
+}
+
+.ReactModal__Body--open {
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+$ANIMATION_DURATION: 0.2;
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity #{$ANIMATION_DURATION}ms ease-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Content {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all #{$ANIMATION_DURATION}ms ease-in;
+}
+
+.ReactModal__Content--after-open {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.ReactModal__Content--before-close {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.AlertModal__Content {
+  outline: none;
+  position: absolute;
+  transform: translateY(100%);
+  transition: all #{$ANIMATION_DURATION}ms ease-in-out;
+}
+
+.AlertModal__Content--after-open {
+  transform: translateY(0);
+}
+
+.AlertModal__Content--before-close {
+  transform: translateY(100%);
+}

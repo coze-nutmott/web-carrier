@@ -1,0 +1,8 @@
+.next
+yarn.lock
+node_modules
+.DS_Store
+.vscode/chrome
+.vscode/launch.json
+out
+.cache

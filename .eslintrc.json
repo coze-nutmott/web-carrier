@@ -1,0 +1,10 @@
+{
+  "extends": "next/core-web-vitals",
+  "plugins": ["kakaoent-plugin"],
+  "rules": {
+    "kakaoent-plugin/no-date": "error",
+    "kakaoent-plugin/no-next-router": "error",
+    "kakaoent-plugin/disallowed-element": "error",
+    "react-hooks/exhaustive-deps": "error"
+  }
+}

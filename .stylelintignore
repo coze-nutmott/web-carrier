@@ -1,0 +1,11 @@
+dist
+.next
+out
+.serverOutput
+node_modules
+lintRule
+public
+**/*.ts
+**/*.tsx
+**/*.js
+**/*.json

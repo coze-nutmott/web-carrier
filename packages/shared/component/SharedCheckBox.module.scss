@@ -1,0 +1,17 @@
+.checkBox {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+
+  > label {
+    cursor: pointer;
+  }
+}
+
+.input {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+}

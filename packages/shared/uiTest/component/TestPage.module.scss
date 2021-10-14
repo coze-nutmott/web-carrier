@@ -1,0 +1,24 @@
+.testPage {
+  min-height: 400px;
+}
+
+.inputsWrapper {
+  background-color: white;
+  border: 1px solid #a6a6a6;
+  position: relative;
+}
+
+.selectWrapper {
+  display: flex;
+}
+
+.inputWrapper {
+  align-items: center;
+  display: flex;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+}

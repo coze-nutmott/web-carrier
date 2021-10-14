@@ -1,0 +1,7 @@
+.kToast {
+  display: flex;
+  pointer-events: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
