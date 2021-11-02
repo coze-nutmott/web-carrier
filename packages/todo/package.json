@@ -9,6 +9,7 @@
     "tsc": "tsc",
     "test": "TZ=UTC jest --watch --maxWorkers=2",
     "test_ci": "TZ=UTC jest --maxWorkers=2",
-    "lint": "next lint && stylelint **/*.scss --config .stylelintrc.js"
+    "lint": "next lint && stylelint **/*.scss --config .stylelintrc.js",
+    "format": "npx prettier --write \"**/*.{ts,tsx}\" --config ../../.prettierrc"
   }
 }
