@@ -10,6 +10,7 @@ import { actions } from 'main/state/action';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getNowIsoString } from 'shared/util/date';
+import { kAlert } from 'shared/component/KAlert';
 
 interface IProps {}
 
@@ -17,6 +18,15 @@ export default function Main({}: IProps) {
   const todos = useSelector(state => state.main.todos);
   const dispatch = useDispatch();
 
+  async function onRemove(todoId: number) {
+    const { okClicked } = await kAlert({
+      title: '정말 삭제하시겠습니까?',
+      buttonSet: 'cancelAndConfirm',
+    });
+    if (okClicked) {
+      dispatch(actions.removeTodo(todoId));
+    }
+  }
   return (
     <div>
       {/* 주요 포인트
@@ -47,7 +57,7 @@ export default function Main({}: IProps) {
         onClickTodo={todoId =>
           kRouter.routeTo({ page: Page.Detail, id: todoId })
         }
-        onRemove={todoId => dispatch(actions.removeTodo(todoId))}
+        onRemove={onRemove}
       />
     </div>
   );

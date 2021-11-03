@@ -11,6 +11,7 @@ import TestUser from 'uiTest/container/TestUser';
 import TestKToast from 'uiTest/container/shared/TestKToast';
 import TestCheckBox from 'uiTest/container/shared/TestCheckBox';
 import TestAnchor from 'uiTest/container/shared/TestAnchor';
+import TestKAlert from 'uiTest/container/shared/TestKAlert';
 
 interface IQuery {
   name?: string;
@@ -39,6 +40,7 @@ const SHARED_TESTS = [
   { component: TestText, name: 'TestText' },
   { component: TestTextButton, name: 'TestTextButton' },
   { component: TestKToast, name: 'TestKToast' },
+  { component: TestKAlert, name: 'TestKAlert' },
   { component: TestCheckBox, name: 'TestCheckBox' },
   { component: TestAnchor, name: 'TestAnchor' },
 ];

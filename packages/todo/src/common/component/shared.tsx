@@ -1,4 +1,3 @@
-import { initializeShared } from 'shared/common';
 import {
   createText,
   IProps as ISharedTextProps,
@@ -20,25 +19,6 @@ import {
   createCheckBox,
   IProps as ISharedCheckBoxProps,
 } from 'shared/component/SharedCheckBox';
-import { getStore } from 'common/store';
-import { ZIndex } from 'common/style/variable';
-
-/**
- * 주요 포인트
- * shared 패키지의 초기화를 위해 필요합니다
- * 아래 함수가 호출될 수 있도록 _app 에서 이 모듈을 import 해줘야 합니다
- */
-initializeShared<IButtonVariant, ITextVariant>({
-  getStore,
-  uiTestParams: {
-    buttonVariant: 'btn_grey01',
-    activeButtonVariant: 'btn_transparent_gold',
-    buttonTextVariant: 's16_regular_black',
-    labelTextVariant: 's16_regular_black',
-    checkBoxTextVariant: 's16_regular_black',
-    inputZIndex: ZIndex.Modal - 1,
-  },
-});
 
 export type ITextProps = ISharedTextProps<ITextVariant>;
 export const Text = createText(textVariant, color);

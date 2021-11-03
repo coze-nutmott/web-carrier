@@ -6,6 +6,7 @@ import { pushLog } from '../util/debug';
 import { callIfFunc, getKeys } from '../util/common';
 import snakeCase from 'lodash/snakeCase';
 
+export let sharedKRouter: KRouter<any, any>;
 export default class KRouter<
   Page extends string,
   PageInfo extends { page: Page },
@@ -33,6 +34,7 @@ export default class KRouter<
     );
     this.dynamicUrlPartsList = dynamicUrlList.map(item => item.split('/'));
     this.pageMap = pageMap;
+    sharedKRouter = this;
   }
 
   routeTo(...params: Parameters<typeof this.getRouteAction>) {
@@ -408,7 +410,7 @@ export default class KRouter<
     params: IRouteToParams<PageInfo, Page> | IRouteCancelPosParams,
   ) {
     const letItGo = () => {
-      if (!this.getIsRouteToParams(params)) {
+      if (!this.getIsRouteTo(params)) {
         history.go(-params.relativePos);
       } else {
         this.routeTo(params.info, params.option);
@@ -422,7 +424,7 @@ export default class KRouter<
     );
   }
 
-  getIsRouteToParams(
+  getIsRouteTo(
     params: IRouteToParams<PageInfo, Page> | IRouteCancelPosParams,
   ): params is IRouteToParams<PageInfo, Page> {
     return 'page' in params;

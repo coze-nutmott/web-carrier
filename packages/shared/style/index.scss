@@ -1,3 +1,5 @@
+@use './variable.module.scss';
+
 body {
   // 가로모드 자동 폰트크기 조절 방지
   -webkit-text-size-adjust: none;
@@ -12,11 +14,9 @@ body {
   width: 100%;
 }
 
-$ANIMATION_DURATION: 0.2;
-
 .ReactModal__Overlay {
   opacity: 0;
-  transition: opacity #{$ANIMATION_DURATION}ms ease-out;
+  transition: opacity #{variable.$MODAL_ANIMATION_DURATION}ms ease-out;
 }
 
 .ReactModal__Overlay--after-open {
@@ -30,7 +30,7 @@ $ANIMATION_DURATION: 0.2;
 .ReactModal__Content {
   opacity: 0;
   transform: scale(0.7);
-  transition: all #{$ANIMATION_DURATION}ms ease-in;
+  transition: all #{variable.$MODAL_ANIMATION_DURATION}ms ease-in;
 }
 
 .ReactModal__Content--after-open {
@@ -47,7 +47,7 @@ $ANIMATION_DURATION: 0.2;
   outline: none;
   position: absolute;
   transform: translateY(100%);
-  transition: all #{$ANIMATION_DURATION}ms ease-in-out;
+  transition: all #{variable.$MODAL_ANIMATION_DURATION}ms ease-in-out;
 }
 
 .AlertModal__Content--after-open {

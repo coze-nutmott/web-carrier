@@ -9,7 +9,6 @@ import { getKeys } from 'shared/util/common';
 export default function TestText() {
   const variant = useTestSelect({
     id: 'variant',
-    label: 'variant',
     options: OPTIONS,
     initialSelectedKey: OPTIONS[0].key,
   });

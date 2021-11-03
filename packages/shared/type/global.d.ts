@@ -26,5 +26,5 @@ interface Window {
 }
 
 type EventObject = React.SyntheticEvent<HTMLElement>;
-type KeyboardEventObject = React.KeyboardEvent<HTMLElement> | KeyboardEvent;
+type KeyboardEventObject = React.KeyboardEvent<Element> | KeyboardEvent;
 type EventFunc = React.ReactEventHandler<any>;

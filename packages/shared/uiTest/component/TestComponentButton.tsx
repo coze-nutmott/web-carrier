@@ -1,6 +1,6 @@
 import { SharedTextButton } from '../../component/SharedTextButton';
-import { UI_TEST_PARAMS } from '../../common';
 import React from 'react';
+import { UI_TEST_PARAMS } from '../../component/SharedContainer';
 
 interface IProps {
   name: string;

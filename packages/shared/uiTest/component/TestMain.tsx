@@ -1,8 +1,8 @@
-import { UI_TEST_PARAMS } from '../../common';
 import React, { ComponentType, Fragment, useEffect, useState } from 'react';
 import TestComponentButton from '../../uiTest/component/TestComponentButton';
 import TestPage from '../../uiTest/component/TestPage';
 import { SharedText } from '../../component/SharedText';
+import { UI_TEST_PARAMS } from '../../component/SharedContainer';
 
 interface IProps {
   testGroups: Array<{

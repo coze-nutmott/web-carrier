@@ -9,13 +9,11 @@ import { getKeys } from 'shared/util/common';
 export default function TestTextButton() {
   const textVariant = useTestSelect({
     id: 'textVariant',
-    label: 'textVariant',
     options: TEXT_OPTIONS,
     initialSelectedKey: TEXT_OPTIONS[0].key,
   });
   const buttonVariant = useTestSelect({
     id: 'buttonVariant',
-    label: 'buttonVariant',
     options: BUTTON_OPTIONS,
     initialSelectedKey: BUTTON_OPTIONS[0].key,
   });

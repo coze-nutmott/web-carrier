@@ -1,4 +1,3 @@
-import { getSharedStore } from '../../common';
 import Toast, {
   IRenderProps1,
   IRenderProps2,
@@ -9,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../state/action';
 import { IToast } from '../../type';
 import styles from './KToast.module.scss';
+import { getSharedStore } from '../SharedContainer';
 
 type IProps<T extends string> = (IRenderProps1 | IRenderProps2<T>) & {
   zIndex: number;

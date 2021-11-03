@@ -1,5 +1,9 @@
+import { IKAlert } from './alert';
+
 export interface IStateShared {
+  kAlerts: IKAlert[];
   toasts: IToast[];
+  isAppMounted: boolean;
 }
 
 export interface IStateDefault {
