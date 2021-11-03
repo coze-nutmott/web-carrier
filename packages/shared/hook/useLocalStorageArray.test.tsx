@@ -59,8 +59,57 @@ describe('useLocalStorageArray', () => {
       { wrapper: global.getWrapperWithRedux() },
     );
     act(() => {
-      result.current[1]([333, 444]);
+      result.current[1](333, 444);
     });
     expect(result.current[0]).toEqual([111, 222, 333, 444]);
+  });
+
+  describe('setValue', () => {
+    it('set new value', () => {
+      const { result } = renderHook(
+        () =>
+          useLocalStorageArray<number>({
+            key: STORAGE_KEY,
+            initialValue: [111, 222],
+          }),
+        { wrapper: global.getWrapperWithRedux() },
+      );
+      act(() => {
+        result.current[2]([333, 444]);
+      });
+      expect(result.current[0]).toEqual([333, 444]);
+    });
+
+    it('set new value without duplication', () => {
+      const { result } = renderHook(
+        () =>
+          useLocalStorageArray<number>({
+            key: STORAGE_KEY,
+            initialValue: [111, 222],
+            isUnique: true,
+          }),
+        { wrapper: global.getWrapperWithRedux() },
+      );
+      act(() => {
+        result.current[2]([333, 333, 444, 555]);
+      });
+      expect(result.current[0]).toEqual([333, 444, 555]);
+    });
+
+    it('set new value up to max length', () => {
+      const { result } = renderHook(
+        () =>
+          useLocalStorageArray<number>({
+            key: STORAGE_KEY,
+            initialValue: [111, 222],
+            maxLength: 3,
+          }),
+        { wrapper: global.getWrapperWithRedux() },
+      );
+      act(() => {
+        result.current[2]([333, 444, 555, 666]);
+      });
+      expect(result.current[0]).toEqual([444, 555, 666]);
+    });
   });
 });
