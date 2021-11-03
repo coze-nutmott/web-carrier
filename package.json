@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "echo \"Error: no test specified\" && exit 1"
+    "start": "echo \"Error: no test specified\" && exit 1",
+    "format": "npx prettier --write \"**/*.{ts,tsx}\" --config .prettierrc"
   },
   "keywords": [],
   "author": "",
@@ -39,10 +40,13 @@
     "babel-plugin-dynamic-import-node": "2.3.3",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
+    "eslint-config-prettier": "8.3.0",
     "eslint-plugin-kakaoent-plugin": "./lintRule",
+    "eslint-plugin-prettier": "4.0.0",
     "jest": "27.2.0",
     "lerna": "4.0.0",
     "postcss": "^8.3.6",
+    "prettier": "2.4.1",
     "sass": "1.41.1",
     "stylelint": "13.13.1",
     "stylelint-config-standard": "22.0.0",

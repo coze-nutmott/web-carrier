@@ -1,6 +1,6 @@
 {
-  "extends": "next/core-web-vitals",
-  "plugins": ["kakaoent-plugin"],
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended"],
+  "plugins": ["kakaoent-plugin", "prettier"],
   "rules": {
     "kakaoent-plugin/no-date": "error",
     "kakaoent-plugin/no-next-router": "error",
