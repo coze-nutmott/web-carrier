@@ -6,6 +6,7 @@ import SelectPriority from 'newTodo/component/SelectPriority';
 import { actions } from 'newTodo/state/action';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import useBlockUnsavedChange from 'shared/hook/useBlockUnsavedChange';
 import { IS_DEBUG } from 'shared/common/constant';
 import { kToast } from 'shared/component/toast/KToast';
 import { KeyboardKeyType } from 'shared/type';
@@ -20,6 +21,15 @@ export default function NewTodo({}: IProps) {
   const [priority, setPriority] = useState<IPriority>('middle');
   const nextId = useSelector(state => state.newTodo.nextId);
   const dispatch = useDispatch();
+  /**
+   * 주요 포인트
+   * 페이지를 벗어나기 전에 얼럿을 띄우는 기능은 useBlockUnsavedChange 훅을 사용합니다
+   * 할일 생성 페이지에서 내용을 입력하고 뒤로가기 또는 탭닫기를 해보세요
+   */
+  useBlockUnsavedChange(
+    '작성 중인 내용이 있습니다.\n정말 나가시겠습니까?',
+    desc.length > 0,
+  );
   const onAdd = () => {
     /**
      * 주요 포인트
