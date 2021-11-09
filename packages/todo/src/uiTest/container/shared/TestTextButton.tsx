@@ -2,9 +2,8 @@ import React from 'react';
 import TestItem from 'shared/uiTest/component/TestItem';
 import useTestSelect from 'shared/uiTest/hook/useTestSelect';
 import { TextButton } from 'common/component/shared';
-import * as textVariant from 'common/style/textVariant';
-import * as buttonVariant from 'common/style/buttonVariant';
-import { getKeys } from 'shared/util/common';
+import { textVariants } from 'common/style/textVariant';
+import { buttonVariants } from 'common/style/buttonVariant';
 
 export default function TestTextButton() {
   const textVariant = useTestSelect({
@@ -26,11 +25,11 @@ export default function TestTextButton() {
   );
 }
 
-const TEXT_OPTIONS = getKeys(textVariant).map(key => ({
+const TEXT_OPTIONS = textVariants.map(key => ({
   key,
   text: key,
 }));
-const BUTTON_OPTIONS = getKeys(buttonVariant).map(key => ({
+const BUTTON_OPTIONS = buttonVariants.map(key => ({
   key,
   text: key,
 }));

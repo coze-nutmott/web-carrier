@@ -2,14 +2,12 @@ import {
   createText,
   IProps as ISharedTextProps,
 } from 'shared/component/SharedText';
-import * as textVariant from 'common/style/textVariant';
-import * as color from 'common/style/color';
+import { colors } from 'common/style/theme';
 import {
   createTextButton,
   IProps as ISharedTextButtonProps,
 } from 'shared/component/SharedTextButton';
 import { IButtonVariant, ITextVariant } from 'common/style';
-import * as buttonVariant from 'common/style/buttonVariant';
 import {
   createAnchor,
   IProps as ISharedAnchorProps,
@@ -21,15 +19,13 @@ import {
 } from 'shared/component/SharedCheckBox';
 
 export type ITextProps = ISharedTextProps<ITextVariant>;
-export const Text = createText(textVariant, color);
+export const Text = createText<ITextVariant>(colors);
 
 export type ITextButtonProps = ISharedTextButtonProps<
   IButtonVariant,
   ITextVariant
 >;
-export const TextButton = createTextButton<IButtonVariant, ITextVariant>(
-  buttonVariant,
-);
+export const TextButton = createTextButton<IButtonVariant, ITextVariant>();
 
 export type IAnchorProps = ISharedAnchorProps<IPageInfo>;
 export const Anchor = createAnchor(kRouter);

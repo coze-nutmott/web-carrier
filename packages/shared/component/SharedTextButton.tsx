@@ -19,7 +19,7 @@ export let SharedTextButton: CompType<any, any>;
 export function createTextButton<
   BV extends string,
   TV extends string,
->(variantMap: { [key in BV]: string }): CompType<BV, TV> {
+>(): CompType<BV, TV> {
   function TextButton(
     {
       variant,
@@ -39,7 +39,7 @@ export function createTextButton<
     return (
       <button
         ref={ref}
-        className={cn(variantMap[variant], 'px-10', 'py-0', className)}
+        className={cn(variant, 'px-10', 'py-0', className)}
         style={{ ...style, width, height }}
         {...rest}
       >

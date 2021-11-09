@@ -4,6 +4,10 @@
   max-width: 100px;
 }
 
+/**
+ * 주요 포인트
+ * tailwind의 theme 값을 scss에서 참조
+ */
 .selected {
-  color: red;
+  color: theme('colors.red');
 }

@@ -9,10 +9,7 @@ export interface IProps<T = string> extends Omit<HTMLProps<HTMLElement>, 'as'> {
 
 type CompType<T> = ComponentType<IProps<T>>;
 export let SharedText: CompType<any>;
-export function createText<T extends string>(
-  variantMap: { [key in T]: string },
-  colorMap: IColorMap,
-): CompType<T> {
+export function createText<T extends string>(colorMap: IColorMap): CompType<T> {
   SharedText = function Text({
     variant,
     className,
@@ -28,7 +25,7 @@ export function createText<T extends string>(
     return createElement(
       as,
       {
-        className: cn(styles.text, variantMap[variant], className),
+        className: cn(styles.text, variant, className),
         ...rest,
       },
       childrenEl,
