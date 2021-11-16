@@ -1,6 +1,7 @@
+import React from 'react';
+
 import { Text, TextButton, Anchor } from 'common/component/shared';
 import { ITodo } from 'common/type';
-import React from 'react';
 
 interface IProps {
   todos: ITodo[];

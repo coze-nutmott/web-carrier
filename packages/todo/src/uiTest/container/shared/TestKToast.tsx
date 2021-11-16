@@ -1,5 +1,6 @@
-import { kToast } from 'shared/component/toast/KToast';
 import React from 'react';
+
+import { kToast } from 'shared/component/toast/KToast';
 import TestItem from 'shared/uiTest/component/TestItem';
 import useTestCheckBox from 'shared/uiTest/hook/useTestCheckBox';
 

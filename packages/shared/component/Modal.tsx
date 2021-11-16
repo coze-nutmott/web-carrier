@@ -1,5 +1,6 @@
 import { useEffect, CSSProperties, ReactNode } from 'react';
 import ReactModal from 'react-modal';
+
 import { IS_CLIENT } from '../common/constant';
 import usePrevious from '../hook/usePrevious';
 import { MODAL_ANIMATION_DURATION } from '../style/variable';

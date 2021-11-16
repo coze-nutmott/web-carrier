@@ -1,5 +1,7 @@
 const webpack = require('webpack');
+
 const withTm = require('next-transpile-modules')(['shared']);
+
 const path = require('path');
 const fs = require('fs');
 

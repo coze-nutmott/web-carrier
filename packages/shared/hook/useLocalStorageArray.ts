@@ -1,5 +1,6 @@
-import useLocalStorage from '../hook/useLocalStorage';
 import { useCallback, useRef } from 'react';
+
+import useLocalStorage from '../hook/useLocalStorage';
 
 export default function useLocalStorageArray<T>({
   initialValue = [],

@@ -1,6 +1,8 @@
-import Detail from 'detail/container/Detail';
 import type { NextPage } from 'next';
 import React from 'react';
+
+import Detail from 'detail/container/Detail';
+
 import useQueryParameter, {
   getNumberRequired,
 } from 'shared/hook/useQueryParameter';

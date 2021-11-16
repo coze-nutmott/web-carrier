@@ -1,4 +1,5 @@
 import { TouchEvent, useRef, useEffect, ReactNode } from 'react';
+
 import styles from './PreventMobileBodyScroll.module.scss';
 
 interface IProps {

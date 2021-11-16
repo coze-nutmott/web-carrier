@@ -1,4 +1,5 @@
 import { ComponentType, createElement, HTMLProps, ReactNode } from 'react';
+
 import styles from './SharedText.module.scss';
 
 export interface IProps<T = string> extends Omit<HTMLProps<HTMLElement>, 'as'> {

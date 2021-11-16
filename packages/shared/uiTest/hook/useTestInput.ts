@@ -1,5 +1,6 @@
-import useEffectAfterTrue from '../../hook/useEffectAfterTrue';
 import { useContext } from 'react';
+
+import useEffectAfterTrue from '../../hook/useEffectAfterTrue';
 import { TestPageContext } from '../../uiTest/context';
 import { ITestInput } from '../../uiTest/type';
 

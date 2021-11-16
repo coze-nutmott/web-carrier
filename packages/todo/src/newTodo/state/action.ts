@@ -1,4 +1,5 @@
 import { IStateNewTodo } from 'newTodo/state/reducer';
+
 import { createAction, createBasicActions } from 'shared/util/redux';
 
 export enum ActionType {

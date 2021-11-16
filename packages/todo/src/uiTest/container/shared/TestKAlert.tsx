@@ -1,9 +1,10 @@
 import React from 'react';
+
+import { kAlert } from 'shared/component/KAlert';
+import { IKAlertButtonSet } from 'shared/type/alert';
 import TestItem from 'shared/uiTest/component/TestItem';
 import useTestCheckBox from 'shared/uiTest/hook/useTestCheckBox';
-import { kAlert } from 'shared/component/KAlert';
 import useTestSelect from 'shared/uiTest/hook/useTestSelect';
-import { IKAlertButtonSet } from 'shared/type/alert';
 
 interface IProps {}
 

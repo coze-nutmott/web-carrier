@@ -1,5 +1,6 @@
-import usePrevious from '../hook/usePrevious';
 import { useEffect, useState } from 'react';
+
+import usePrevious from '../hook/usePrevious';
 
 /**
  * - value 가 false => true 가 되는 경우에만 callback 을 호출한다
