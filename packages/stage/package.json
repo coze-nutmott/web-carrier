@@ -1,0 +1,16 @@
+{
+  "name": "stage",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "start": "next start -p 3001",
+    "build": "next build",
+    "real": "next start",
+    "tsc": "tsc",
+    "test": "TZ=UTC jest --watch --maxWorkers=2",
+    "test_ci": "TZ=UTC jest --maxWorkers=2",
+    "lint": "next lint && stylelint **/*.scss --config .stylelintrc.js",
+    "format": "npx prettier --write \"**/*.{ts,tsx}\" --config ../../.prettierrc"
+  }
+}

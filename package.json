@@ -12,6 +12,7 @@
   "license": "ISC",
   "workspaces": [
     "packages/shared",
+    "packages/stage",
     "packages/todo"
   ],
   "dependencies": {

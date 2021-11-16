@@ -1,0 +1,76 @@
+.alertWrapper {
+  @media (min-width: 768px) {
+    margin: auto;
+    width: 630px;
+  }
+}
+
+.title {
+  word-break: break-all;
+}
+
+@mixin buttonsMixin {
+  bottom: 30px;
+  display: flex;
+  left: 0;
+  z-index: 1;
+}
+
+.buttonsWrap {
+  @include buttonsMixin;
+
+  & > button + button {
+    margin-left: 15px;
+  }
+}
+
+.buttonsVerticalWrap {
+  @include buttonsMixin;
+
+  flex-direction: column-reverse;
+
+  & > button + button {
+    margin-bottom: 10px;
+  }
+}
+
+@mixin gradientMixin {
+  background: linear-gradient(to bottom, transparent 0%, #1c1c1c 100%);
+  bottom: 0;
+  left: 0;
+}
+
+.gradient {
+  @include gradientMixin;
+
+  height: 110px;
+}
+
+.verticalGradient2 {
+  @include gradientMixin;
+
+  height: 170px;
+}
+
+.verticalGradient3 {
+  @include gradientMixin;
+
+  height: 230px;
+}
+
+.pb1 {
+  padding-bottom: 110px;
+}
+
+.pb2 {
+  padding-bottom: 170px;
+}
+
+.pb3 {
+  padding-bottom: 230px;
+}
+
+.desc {
+  max-height: 60vh;
+  overflow-y: auto;
+}
