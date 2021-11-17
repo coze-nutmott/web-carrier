@@ -1,11 +1,11 @@
 import type { NextPage } from 'next';
 import React from 'react';
 
-import Detail from 'detail/container/Detail';
-
 import useQueryParameter, {
   getNumberRequired,
 } from 'shared/hook/useQueryParameter';
+
+import Detail from 'detail/container/Detail';
 
 interface IQuery {
   id: number;

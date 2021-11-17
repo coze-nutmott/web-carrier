@@ -7,7 +7,12 @@ module.exports = {
     'kakaoent-plugin/disallowed-element': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'import/order': [
-      'error',
+      /**
+       * 어디선가 설정값이 덮어써지는데, npm run lint할 때와 vscode formatOnSave할 때의 order 순서가 다르다.
+       * vscode에서 자동 포맷팅된 결과값이 ci할때 npm run lint에서 error 발생하므로 Off로 변경.
+       * 추후에 import 순서 정리가 필요하다면 error로 변경 후 적용하는 걸로 논의.
+       */
+      'off',
       {
         groups: [
           'builtin',

@@ -2,7 +2,6 @@ import { IButtonVariant, ITextVariant } from 'common/style';
 import { colors } from 'common/style/theme';
 import { IPageInfo, kRouter } from 'common/util/kRouter';
 import _ from 'lodash';
-
 import {
   createAnchor,
   IProps as ISharedAnchorProps,

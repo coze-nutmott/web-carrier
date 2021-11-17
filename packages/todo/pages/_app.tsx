@@ -1,14 +1,15 @@
 import React from 'react';
 
-import 'common/component/shared';
-import AlertContent from 'common/component/AlertContent';
+import SharedContainer from 'shared/component/SharedContainer';
+
 import { getStore } from 'common/store';
 import { ITextVariant } from 'common/style';
 import { ZIndex } from 'common/style/variable';
 
-import SharedContainer from 'shared/component/SharedContainer';
-
 import type { AppProps } from 'next/app';
+
+import 'common/component/shared';
+import AlertContent from 'common/component/AlertContent';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
