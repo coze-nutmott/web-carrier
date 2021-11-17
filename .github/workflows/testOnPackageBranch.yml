@@ -1,0 +1,50 @@
+name: test-on-package-branch
+
+on:
+  push:
+    branches-ignore:
+      - 'preview/**'
+      - 'dev/**'
+
+jobs:
+  test:
+    name: Test test_ci, test_scss_ts, lint, tsc, build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        id: cache
+        with:
+          path: node_modules
+          key: npm-packages-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: extract package name
+        run: echo "PACKAGE_NAME=$(echo ${GITHUB_REF_NAME} | cut -d'/' -f 1)" >> $GITHUB_ENV
+
+      - run: npm run test_ci -w=${{env.PACKAGE_NAME}} -w=shared
+      - run: npm run lint -w=${{env.PACKAGE_NAME}} -w=shared
+      - run: npm run tsc -w=${{env.PACKAGE_NAME}} -w=shared
+      - run: npm run build -w=${{env.PACKAGE_NAME}} -w=shared
+
+      - name: Send slack when failed
+        uses: 8398a7/action-slack@v3
+        if: ${{ failure() }}
+        with:
+          status: ${{ job.status }}
+          fields: repo, message, commit, author, eventName, ref, workflow
+          author_name: Web3team CI
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

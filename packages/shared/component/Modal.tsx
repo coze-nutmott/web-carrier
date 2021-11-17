@@ -1,4 +1,5 @@
 import { useEffect, CSSProperties, ReactNode } from 'react';
+
 import ReactModal from 'react-modal';
 
 import { IS_CLIENT } from '../common/constant';

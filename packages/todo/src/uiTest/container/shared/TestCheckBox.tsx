@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { CheckBox } from 'common/component/shared';
+import TestItem from 'shared/uiTest/component/TestItem';
 
 import TestItem from 'shared/uiTest/component/TestItem';
 

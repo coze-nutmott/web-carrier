@@ -14,7 +14,6 @@ import useQueryParameter, {
   getStringOptional,
 } from 'shared/hook/useQueryParameter';
 import TestMain from 'shared/uiTest/component/TestMain';
-
 interface IQuery {
   name?: string;
 }
