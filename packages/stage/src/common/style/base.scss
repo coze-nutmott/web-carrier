@@ -1,0 +1,11 @@
+html {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  min-width: 0;
+  box-sizing: inherit;
+  letter-spacing: -0.02em;
+}

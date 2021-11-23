@@ -6,6 +6,12 @@ $Z_INDEX: (
   Loading: 1000,
 );
 
+$SCREEN: (
+  Desktop: 1036,
+);
+
+$MAX_WIDTH: 1068;
+
 :export {
   Z_INDEX_LOADING: map-get($Z_INDEX, 'Loading');
   Z_INDEX_MODAL: map-get($Z_INDEX, 'Modal');

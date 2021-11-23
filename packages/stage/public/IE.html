@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p {
+        margin: 0;
+      }
+
+      .container {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        line-height: 1.4;
+      }
+
+      .title {
+        margin-bottom: 10px;
+        font-size: 32px;
+      }
+
+      .wrapper {
+        margin: auto;
+        text-align: center;
+      }
+
+      .notice {
+        color: #989898;
+        font-size: 15px;
+        font-weight: normal;
+      }
+
+      .black {
+        color: #101010;
+      }
+
+      .row {
+        display: flex;
+        margin-top: 56px;
+      }
+
+      .link {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        margin: 0 48px;
+        color: #101010;
+        font-size: 15px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      .image {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 12px;
+      }
+
+      .only {
+        color: #989898;
+        font-size: 10px;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <div class="wrapper">
+        <h1 class="title">이 브라우저는 지원하지 않습니다.</h1>
+
+        <p class="notice">
+          <span class="black">카카오페이지 스테이지</span>에서는 Internet
+          Explorer를 지원하지 않습니다.<br />최신 버전의 웹 브라우저를
+          사용해주세요.
+        </p>
+
+        <div class="row">
+          <a class="link" href="https://www.google.co.kr/chrome">
+            <img class="image" src="/static/images/img-chrome.png" />
+            <p>Chrome</p>
+          </a>
+          <a class="link" href="https://www.mozilla.org/ko/firefox/new/">
+            <img class="image" src="/static/images/img-firefox.png" />
+            <p>Firefox</p>
+          </a>
+          <a class="link" href="https://www.apple.com/kr/safari/">
+            <img class="image" src="/static/images/img-safari.png" />
+            <p>Safari</p>
+            <p class="only">(macOS에서만)</p>
+          </a>
+          <a class="link" href="https://www.microsoft.com/ko-kr/edge">
+            <img class="image" src="/static/images/img-edge.png" />
+            <p>Edge</p>
+            <p class="only">(windows에서만)</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

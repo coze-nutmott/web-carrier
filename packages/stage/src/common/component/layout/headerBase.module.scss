@@ -1,0 +1,21 @@
+@use '../../style/variable.module.scss';
+
+$DESKTOP_WIDTH: map-get(variable.$SCREEN, Desktop);
+
+.logoImage {
+  min-height: 25px;
+  @media (min-width: #{$DESKTOP_WIDTH}px) {
+    min-height: 30px;
+  }
+}
+
+.logoLink {
+  flex: 1;
+  @media (min-width: #{$DESKTOP_WIDTH}px) {
+    flex: 0 1 auto;
+  }
+}
+
+.headerContainer {
+  max-width: #{variable.$MAX_WIDTH}px;
+}

@@ -11,6 +11,15 @@ export interface IRoute {
   rankingSubRoutes?: boolean; // 랭킹에서 소장르 선택 표시 여부
 }
 
+export type IGenre =
+  | 'fantasy'
+  | 'modfan'
+  | 'orifan'
+  | 'romance'
+  | 'rofan'
+  | 'bl'
+  | 'free';
+
 export interface ISubGenre {
   id: number;
   genreId: number;

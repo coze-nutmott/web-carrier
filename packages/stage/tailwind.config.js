@@ -8,18 +8,8 @@ module.exports = {
   presets: [config],
   theme: {
     ...config.theme,
-    colors: {
-      black: '#000',
-      black2: '#222',
-      blue: '#4095ff',
-      gold: '#c6a66d',
-      grey01: '#ddd',
-      grey02: '#a6a6a6',
-      purple: '#6853e7',
-      red: '#ff3042',
-      transparent: 'transparent',
-      white: '#fff',
-    },
+    screens: require('./tailwind/screen'),
+    colors: require('./tailwind/colors'),
   },
   mode: 'jit',
   purge: [
@@ -28,6 +18,7 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   plugins: [
+    require('./tailwind/layout'),
     require('./tailwind/textVariant').plugin,
     require('./tailwind/buttonVariant').plugin,
   ],

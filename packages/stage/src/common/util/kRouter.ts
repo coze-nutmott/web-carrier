@@ -2,24 +2,19 @@ import KRouter from 'shared/util/sharedKRouter';
 
 export enum Page {
   Main = '',
-  NewTodo = 'new-todo',
-  Detail = 'detail/[id]',
-  Event = 'event/[id]',
+  Genre = '[genre]',
+  Search = 'search',
+  Library = 'library/bookmarks',
 }
 
-export type IPageInfo = IPageInfoNoQuery | IPageDetail | IPageEvent;
-interface IPageDetail {
-  page: Page.Detail;
-  id: number;
-}
-interface IPageEvent {
-  page: Page.Event;
-  id: string;
-  requestedDt: string;
+export type IPageInfo = IPageInfoNoQuery | IPageGenre;
+interface IPageGenre {
+  page: Page.Genre;
+  genre: string;
 }
 
 interface IPageInfoNoQuery {
-  page: Page.Main | Page.NewTodo;
+  page: Page.Main | Page.Search | Page.Library;
 }
 
 export const kRouter = new KRouter<Page, IPageInfo>({

@@ -6,6 +6,8 @@ import SharedContainer from 'shared/component/SharedContainer';
 import 'common/component/shared';
 import { getStore } from 'common/store';
 import AlertContent from 'common/component/AlertContent';
+import Layout from 'common/component/layout';
+import 'common/style/base.scss';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -25,7 +27,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       }}
       AlertContentComponent={AlertContent}
     >
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </SharedContainer>
   );
 }

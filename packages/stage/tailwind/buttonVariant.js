@@ -1,59 +1,63 @@
 const _ = require('lodash');
 const plugin = require('tailwindcss/plugin');
+const colors = require('./colors');
 
-const getVariants = theme => ({
+const BUTTON_VARIANTS = {
   btn_transparent: {
-    'background-color': theme('colors.transparent'),
+    'background-color': colors.transparent,
   },
   btn_transparent_gold: {
-    'background-color': theme('colors.transparent'),
-    border: `1px solid ${theme('colors.gold')}`,
+    'background-color': colors.transparent,
+    border: `1px solid ${colors.gold}`,
     'border-radius': '9.5px',
   },
   btn_transparent_gold_02: {
-    'background-color': theme('colors.transparent'),
-    border: `1px solid ${theme('colors.gold')}`,
+    'background-color': colors.transparent,
+    border: `1px solid ${colors.gold}`,
     'border-radius': '25px',
   },
   btn_black: {
-    'background-color': theme('colors.black'),
+    'background-color': colors.black,
     'border-radius': '5px',
   },
   btn_grey01: {
-    'background-color': theme('colors.grey01'),
+    'background-color': colors.grey01,
     'border-radius': '3px',
     '&:disabled': {
       opacity: 1,
     },
   },
   btn_black_white: {
-    'background-color': theme('colors.black'),
-    border: `1px solid ${theme('colors.white')}`,
+    'background-color': colors.black,
+    border: `1px solid ${colors.white}`,
     'border-radius': '25px',
   },
   btn_black_blue: {
-    'background-color': theme('colors.black'),
-    border: `1px solid ${theme('colors.blue')}`,
+    'background-color': colors.black,
+    border: `1px solid ${colors.blue}`,
     'border-radius': '25px',
   },
   btn_white_black: {
-    'background-color': theme('colors.white'),
-    border: `1px solid ${theme('colors.black')}`,
+    'background-color': colors.white,
+    border: `1px solid ${colors.black}`,
     'border-radius': '25px',
   },
-});
+  btn_transparent_grey01: {
+    'background-color': colors.transparent,
+    border: `1px solid ${colors.grey01}`,
+    'border-radius': '24px',
+  },
+};
 
 module.exports = {
-  plugin: plugin(function ({ addComponents, theme, e }) {
-    const components = _.toPairs(getVariants(theme)).map(
-      ([name, properties]) => {
-        return {
-          [`.${e(name)}`]: properties,
-        };
-      },
-    );
+  plugin: plugin(function ({ addComponents, e }) {
+    const components = _.toPairs(BUTTON_VARIANTS).map(([name, value]) => {
+      return {
+        [`.${e(name)}`]: value,
+      };
+    });
 
     addComponents(components);
   }),
-  variants: getVariants(color => color),
+  variants: BUTTON_VARIANTS,
 };
