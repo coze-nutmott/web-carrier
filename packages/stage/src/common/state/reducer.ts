@@ -5,9 +5,14 @@ import {
   createBasicReducerHandlers,
 } from 'shared/util/redux';
 
-export interface IStateCommon {}
+type ITheme = 'light' | 'dark' | 'green';
+export interface IStateCommon {
+  theme: ITheme;
+}
 
-export const INITIAL_STATE: IStateCommon = {};
+export const INITIAL_STATE: IStateCommon = {
+  theme: 'light',
+};
 
 export default createReducer<IStateCommon, ReducerActionHelper<typeof actions>>(
   INITIAL_STATE,
