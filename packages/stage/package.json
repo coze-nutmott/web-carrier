@@ -12,5 +12,9 @@
     "test_ci": "TZ=UTC jest --maxWorkers=2",
     "lint": "next lint && stylelint **/*.scss --config .stylelintrc.js",
     "format": "npx prettier --write \"**/*.{ts,tsx}\" --config ../../.prettierrc"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "2.0.1",
+    "babel-plugin-module-resolver": "4.1.0"
   }
 }

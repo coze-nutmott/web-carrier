@@ -2,6 +2,7 @@
 
 html {
   font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
 }
 
 *,
@@ -10,4 +11,10 @@ html {
   min-width: 0;
   box-sizing: inherit;
   letter-spacing: -0.02em;
+}
+
+svg,
+img {
+  max-width: 100%;
+  max-height: 100%;
 }

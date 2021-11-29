@@ -7,6 +7,10 @@ import { IRoute } from 'common/type';
 import { Page } from 'common/util/kRouter';
 import { useRouter } from 'next/router';
 import React, { ReactNode, useMemo } from 'react';
+import KakaoPageIcon from '@icons/icons-brand-kakaopage-black-white.svg';
+import HeartIcon from '@icons/icons-favorite-genre.svg';
+import LibraryIcon from '@icons/icons-library.svg';
+import SearchIcon from '@icons/icons-search.svg';
 
 // NOTE: 19세 작품 필터 비활성화
 // import { AdultFilterToggle } from '@/components/Toggle';
@@ -55,10 +59,7 @@ const DefaultHeader = ({ children }: IProps) => {
             >
               <div className="flex items-center">
                 <div className="w-24 desktop:w-16 h-24 desktop:h-16 mr-4">
-                  <img
-                    src={'/static/icons/icons-favorite-genre.svg'}
-                    alt="선호설정"
-                  />
+                  <HeartIcon />
                 </div>
                 <Text
                   variant="s16_medium_grey02"
@@ -77,15 +78,16 @@ const DefaultHeader = ({ children }: IProps) => {
             className="mr-20 w-20 h-20 text-grey02"
             pageInfo={{ page: Page.Library }}
           >
-            <img src="/static/icons/icons-library.svg" alt="라이브러리" />
+            <LibraryIcon />
           </Anchor>
         )}
 
         <Anchor
+          display="flex"
           className="w-20 h-20 mr-16 desktop:mr-20 text-grey02"
           pageInfo={{ page: Page.Search }}
         >
-          <img src="/static/icons/search.svg" alt="검색" />
+          <SearchIcon />
         </Anchor>
         {/* {session.user ? <UsersMenu /> : <LoginMenu />} */}
         <Anchor
@@ -95,10 +97,7 @@ const DefaultHeader = ({ children }: IProps) => {
           rel="noopener noreferrer"
         >
           <div className="flex w-18 h-18">
-            <img
-              src="/static/icons/icons-brand-kakaopage-black-white.svg"
-              alt="카카오페이지"
-            />
+            <KakaoPageIcon />
           </div>
         </Anchor>
       </div>
