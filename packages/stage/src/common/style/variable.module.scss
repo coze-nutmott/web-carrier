@@ -4,6 +4,7 @@ $Z_INDEX: (
   Modal: 200,
   Toast: 300,
   Loading: 1000,
+  SelectDropdown: 1000,
 );
 
 $SCREEN: (
@@ -15,5 +16,6 @@ $MAX_WIDTH: 1068;
 :export {
   Z_INDEX_LOADING: map-get($Z_INDEX, 'Loading');
   Z_INDEX_MODAL: map-get($Z_INDEX, 'Modal');
+  Z_INDEX_SELECT_DROPDOWN: map-get($Z_INDEX, 'SelectDropdown');
   Z_INDEX_TOAST: map-get($Z_INDEX, 'Toast');
 }

@@ -13,8 +13,12 @@
     "lint": "next lint && stylelint **/*.scss --config .stylelintrc.js",
     "format": "npx prettier --write \"**/*.{ts,tsx}\" --config ../../.prettierrc"
   },
+  "dependencies": {
+    "body-scroll-lock": "3.0.3"
+  },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "2.0.1",
-    "babel-plugin-module-resolver": "4.1.0"
+    "babel-plugin-module-resolver": "4.1.0",
+    "@types/body-scroll-lock": "3.1.0"
   }
 }

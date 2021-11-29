@@ -6,22 +6,22 @@ const BUTTON_VARIANTS = {
   btn_transparent: {
     'background-color': colors.transparent,
   },
-  btn_transparent_gold: {
+  btn_transparent_yellow: {
     'background-color': colors.transparent,
-    border: `1px solid ${colors.gold}`,
+    border: `1px solid ${colors.yellow}`,
     'border-radius': '9.5px',
   },
-  btn_transparent_gold_02: {
+  btn_transparent_yellow_02: {
     'background-color': colors.transparent,
-    border: `1px solid ${colors.gold}`,
+    border: `1px solid ${colors.yellow}`,
     'border-radius': '25px',
   },
   btn_black: {
     'background-color': colors.black,
     'border-radius': '5px',
   },
-  btn_grey01: {
-    'background-color': colors.grey01,
+  btn_gray: {
+    'background-color': colors.gray,
     'border-radius': '3px',
     '&:disabled': {
       opacity: 1,
@@ -32,9 +32,9 @@ const BUTTON_VARIANTS = {
     border: `1px solid ${colors.white}`,
     'border-radius': '25px',
   },
-  btn_black_blue: {
+  btn_black_red: {
     'background-color': colors.black,
-    border: `1px solid ${colors.blue}`,
+    border: `1px solid ${colors.red}`,
     'border-radius': '25px',
   },
   btn_white_black: {
@@ -42,9 +42,9 @@ const BUTTON_VARIANTS = {
     border: `1px solid ${colors.black}`,
     'border-radius': '25px',
   },
-  btn_transparent_grey01: {
+  btn_transparent_gray: {
     'background-color': colors.transparent,
-    border: `1px solid ${colors.grey01}`,
+    border: `1px solid ${colors.gray}`,
     'border-radius': '24px',
   },
 };

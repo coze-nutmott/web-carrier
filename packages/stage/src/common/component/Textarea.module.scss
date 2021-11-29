@@ -1,0 +1,12 @@
+.autoGrow {
+  &::after {
+    content: attr(data-replicated-value) ' ';
+    visibility: hidden;
+    white-space: pre-wrap;
+  }
+  & > textarea,
+  &::after {
+    grid-area: 1 / 1 / 2 / 2;
+    overflow: hidden;
+  }
+}

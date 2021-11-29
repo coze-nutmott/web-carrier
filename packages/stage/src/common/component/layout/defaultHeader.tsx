@@ -55,7 +55,7 @@ const DefaultHeader = ({ children }: IProps) => {
           <div className="flex">
             <TextButton
               variant="btn_transparent_grey01"
-              textVariant="s10_regular_grey02"
+              textVariant="s10_normal_grey02"
             >
               <div className="flex items-center">
                 <div className="w-24 desktop:w-16 h-24 desktop:h-16 mr-4">

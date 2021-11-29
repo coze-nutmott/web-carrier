@@ -8,21 +8,22 @@ import { getStore } from 'common/store';
 import AlertContent from 'common/component/AlertContent';
 import Layout from 'common/component/layout';
 import 'common/style/base.scss';
+import ModalLayer from 'common/component/Modals/ModalLayer';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <SharedContainer<ITextVariant>
       router={router}
-      toastTextVariant="s16_regular_white"
+      toastTextVariant="s16_normal_white"
       toastZIndex={ZIndex.Toast}
       modalZIndex={ZIndex.Modal}
       getStore={getStore}
       uiTestParams={{
-        buttonVariant: 'btn_grey01',
-        activeButtonVariant: 'btn_transparent_gold',
-        buttonTextVariant: 's16_regular_black',
-        labelTextVariant: 's16_regular_black',
-        checkBoxTextVariant: 's16_regular_black',
+        buttonVariant: 'btn_gray',
+        activeButtonVariant: 'btn_transparent_yellow',
+        buttonTextVariant: 's16_normal_black',
+        labelTextVariant: 's16_normal_black',
+        checkBoxTextVariant: 's16_normal_black',
         inputZIndex: ZIndex.Modal - 1,
       }}
       AlertContentComponent={AlertContent}
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       <Layout>
         <Component {...pageProps} />
       </Layout>
+      <ModalLayer />
     </SharedContainer>
   );
 }

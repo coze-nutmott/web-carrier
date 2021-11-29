@@ -24,7 +24,7 @@ export default function AlertContent({
         {...getDefaultBtnProps(index)}
         onClick={_callback}
         variant="btn_black"
-        textVariant="s16_regular_white"
+        textVariant="s16_normal_white"
       >
         {labelConfirm ?? '확인'}
       </TextButton>
@@ -36,7 +36,7 @@ export default function AlertContent({
         {...getDefaultBtnProps(index)}
         onClick={_callback}
         variant="btn_black"
-        textVariant="s16_regular_white"
+        textVariant="s16_normal_white"
       >
         {labelSecondConfirm}
       </TextButton>
@@ -48,7 +48,7 @@ export default function AlertContent({
         {...getDefaultBtnProps(index)}
         onClick={_onRequestClose}
         variant="btn_black"
-        textVariant="s16_regular_white"
+        textVariant="s16_normal_white"
       >
         {labelClose ?? '취소'}
       </TextButton>
@@ -112,7 +112,7 @@ export default function AlertContent({
             {isCustomTitle && title}
             {!isCustomTitle && (
               <Text
-                variant="s16_regular_white"
+                variant="s16_normal_white"
                 className={cn(styles.title, 'text-center')}
               >
                 {title}
@@ -128,7 +128,7 @@ export default function AlertContent({
             {isCustomDesc && desc}
             {!isCustomDesc && (
               <Text
-                variant="s16_regular_white"
+                variant="s16_normal_white"
                 className={cn({ ['mt-19']: !title })}
               >
                 {desc}

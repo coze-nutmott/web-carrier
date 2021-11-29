@@ -4,7 +4,19 @@ import styles from './SharedText.module.scss';
 export interface IProps<T = string> extends Omit<HTMLProps<HTMLElement>, 'as'> {
   variant: T;
   children: ReactNode;
-  as?: 'div' | 'span' | 'p' | 'label' | 'dt' | 'dd';
+  as?:
+    | 'div'
+    | 'span'
+    | 'p'
+    | 'label'
+    | 'dt'
+    | 'dd'
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6';
 }
 
 type CompType<T> = ComponentType<IProps<T>>;

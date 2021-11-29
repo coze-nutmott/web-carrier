@@ -1,20 +1,335 @@
 @use './theme.scss';
 
 html {
-  font-family: 'Noto Sans KR', sans-serif;
   box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  height: -webkit-fill-available;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  appearance: none;
+  color: inherit;
+  line-height: inherit;
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/GmarketSansMedium.woff') format('woff');
+  unicode-range: U+0020-007F;
+}
+
+@font-face {
+  font-family: 'SSCloverRegular';
+  src: url('/fonts/SSCloverRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SSFlowerRoadRegular';
+  src: url('/fonts/SSFlowerRoadRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SSGongHanEngRegular';
+  src: url('/fonts/SSGongHanEngRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SSGongHanEngRegular';
+  src: url('/fonts/SSGongHanEngRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SSToughguy_Donjoker_2856';
+  src: url('/fonts/SSToughguy_Donjoker_2856.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SSToughguy_Military';
+  src: url('/fonts/SSToughguy_Military_2856.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SSUnderwoodGulimRegular';
+  src: url('/fonts/SSUnderwoodGulimRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SSWorInRegular';
+  src: url('/fonts/SSWorInRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TDTDBaguetteBlanc';
+  src: url('/fonts/TDTDBaguetteBlanc.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TDTDDontWorry';
+  src: url('/fonts/TDTDDontWorry.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TDTDFlutteringNotice';
+  src: url('/fonts/TDTDFlutteringNotice.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TDTDMemory';
+  src: url('/fonts/TDTDMemory.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TDTDPhotogon';
+  src: url('/fonts/TDTDPhotogon.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TDTDRun';
+  src: url('/fonts/TDTDRun.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TDTDShadowMj';
+  src: url('/fonts/TDTDShadowMj.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TDTDTheater';
+  src: url('/fonts/TDTDTheater.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TYPE500daysofsummer';
+  src: url('/fonts/TYPE500daysofsummerB-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TYPEMoncherrr';
+  src: url('/fonts/TYPEMoncherrr-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TYPELikeaflower';
+  src: url('/fonts/TYPELikeaflowerR-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TYPENightdokkaebi';
+  src: url('/fonts/TYPENightdokkaebi-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TYPEBlacklover';
+  src: url('/fonts/TYPEBlacklover-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TYPEKinfolklife';
+  src: url('/fonts/TYPEKinfolklife-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'SSRockRegular';
+  src: url('/fonts/SSRockRegular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EBS_hunmin';
+  src: url('/fonts/EBS_hunmin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EBS_jusikyung';
+  src: url('/fonts/EBS_jusikyung.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EBS_hunmin_saeron';
+  src: url('/fonts/EBS_hunmin_saeron.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'IBMPlexSansKR';
+  src: url('/fonts/IBMPlexSansKR.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MAPO_hongdae';
+  src: url('/fonts/MAPO_hongdae.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MAPO_golden';
+  src: url('/fonts/MAPO_golden.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MAPO_flower_island';
+  src: url('/fonts/MAPO_flower_island.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MAPO_dacapo';
+  src: url('/fonts/MAPO_dacapo.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MAPO_dangin';
+  src: url('/fonts/MAPO_dangin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MAPO_maponaru';
+  src: url('/fonts/MAPO_maponaru.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MAPO_backpack';
+  src: url('/fonts/MAPO_backpack.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MAPO_aemin';
+  src: url('/fonts/MAPO_aemin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'MAPO_hanareum';
+  src: url('/fonts/MAPO_hanareum.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onmokujasusimgyeol';
+  src: url('/fonts/Onmokujasusimgyeol.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onsalyakeonhae';
+  src: url('/fonts/Onsalyakeonhae.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onsukbosangjeol';
+  src: url('/fonts/Onsukbosangjeol.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onsongganggasa';
+  src: url('/fonts/Onsongganggasa.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onyeossihyangyakeonhae';
+  src: url('/fonts/Onyeossihyangyakeonhae.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onwolinsukbo';
+  src: url('/fonts/Onwolinsukbo.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onjeongsokeonhae';
+  src: url('/fonts/Onjeongsokeonhae.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onjijanggyeongeonhae';
+  src: url('/fonts/Onjijanggyeongeonhae.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onchunhyangjeon';
+  src: url('/fonts/Onchunhyangjeon.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Onhwalyongdo';
+  src: url('/fonts/Onhwalyongdo.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'BlackHanSans';
+  src: url('/fonts/BlackHanSans.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'GyeonggiBatang';
+  src: url('/fonts/GyeonggiBatang.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'GyeonggiTitle';
+  src: url('/fonts/GyeonggiTitle.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Library';
+  src: url('/fonts/Library.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Wando_hope';
+  src: url('/fonts/Wando_hope.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Jeju_gothic';
+  src: url('/fonts/Jeju_gothic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Jeju_mj';
+  src: url('/fonts/Jeju_mj.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Jeju_hanra';
+  src: url('/fonts/Jeju_hanra.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Happy_goheung';
+  src: url('/fonts/Happy_goheung.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'NotoSerifKR';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff')
+    format('woff');
 }
 
 *,
 *::before,
 *::after {
-  min-width: 0;
   box-sizing: inherit;
   letter-spacing: -0.02em;
+  min-width: 0;
 }
 
 svg,
 img {
-  max-width: 100%;
   max-height: 100%;
+  max-width: 100%;
 }

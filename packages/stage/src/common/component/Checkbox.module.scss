@@ -1,0 +1,9 @@
+.mockCheckbox {
+  input:checked + & {
+    background-color: theme('colors.yellow');
+    border-width: 0;
+  }
+  input[disabled]:checked + & {
+    background-color: #d2d2d2;
+  }
+}

@@ -5,6 +5,7 @@ export enum Page {
   Genre = '[genre]',
   Search = 'search',
   Library = 'library/bookmarks',
+  Dev = 'dev',
 }
 
 export type IPageInfo = IPageInfoNoQuery | IPageGenre;
@@ -14,7 +15,7 @@ interface IPageGenre {
 }
 
 interface IPageInfoNoQuery {
-  page: Page.Main | Page.Search | Page.Library;
+  page: Page.Main | Page.Search | Page.Library | Page.Dev;
 }
 
 export const kRouter = new KRouter<Page, IPageInfo>({

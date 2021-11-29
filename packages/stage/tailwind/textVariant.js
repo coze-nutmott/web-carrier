@@ -2,15 +2,20 @@ const _ = require('lodash');
 const plugin = require('tailwindcss/plugin');
 const colors = require('./colors');
 
-const BLACK = 900;
-const EXTRABOLD = 800;
 const BOLD = 700;
-const SEMIBOLD = 600;
 const MEDIUM = 500;
-const REGULAR = 400;
-const LIGHT = 300;
+const NORMAL = 400;
 
 const VARIANTS = {
+  // from stage
+  s12_normal_gray: [12, NORMAL, colors.grayFont],
+  s12_medium_gray: [12, MEDIUM, colors.grayFont],
+  s14_normal_gray: [14, NORMAL, colors.grayFont],
+  s14_medium_gray: [14, MEDIUM, colors.grayFont],
+  s15_normal_gray: [15, NORMAL, colors.grayFont],
+  s15_normal_black: [15, NORMAL, colors.black],
+  s22_bold_black: [22, BOLD, colors.black],
+  // from todo
   s84_medium_black: [84, MEDIUM, colors.black],
   s42_bold_black: [42, BOLD, colors.black],
   s16_bold_black: [15, BOLD, colors.black],
@@ -18,10 +23,10 @@ const VARIANTS = {
   s16_medium_purple: [16, MEDIUM, colors.purple],
   s16_medium_blue: [16, MEDIUM, colors.blue],
   s16_medium_grey02: [16, MEDIUM, colors.grey02],
-  s16_regular_white: [16, REGULAR, colors.white],
-  s16_regular_black: [16, REGULAR, colors.black],
-  s12_regular_black: [12, REGULAR, colors.black],
-  s10_regular_grey02: [10, REGULAR, colors.grey02],
+  s16_normal_white: [16, NORMAL, colors.white],
+  s16_normal_black: [16, NORMAL, colors.black],
+  s12_normal_black: [12, NORMAL, colors.black],
+  s10_normal_grey02: [10, NORMAL, colors.grey02],
 };
 
 module.exports = {

@@ -11,12 +11,19 @@ module.exports = {
     'no-descending-specificity': null,
     'function-name-case': null,
     'value-keyword-case': null,
-    'property-no-unknown': [true, {
-      'ignoreSelectors': [":export"]
-    }],
-    'selector-pseudo-class-no-unknown': [true, {
-      'ignorePseudoClasses': ['export']
-    }],
-    'property-case': null
+    'property-no-unknown': [
+      true,
+      {
+        ignoreSelectors: [':export'],
+      },
+    ],
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {
+        ignorePseudoClasses: ['export'],
+      },
+    ],
+    'property-case': null,
+    'declaration-colon-newline-after': 'always-multi-line',
   },
 };

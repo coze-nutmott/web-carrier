@@ -1,0 +1,13 @@
+.radioGroup {
+  border: 1px solid #e8e8e8;
+  &:checked {
+    border: 4px solid #fdc324;
+  }
+  &[disabled] {
+    background-color: #f2f2f2;
+  }
+  &[disabled]:checked {
+    background-color: #f2f2f2;
+    border: 4px solid #d0d0d0;
+  }
+}

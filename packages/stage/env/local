@@ -1,5 +1,10 @@
 {
-  "WEB_HOST": "https://localhost:3001",
-  "API_HOST": "https://localhost:3001",
-  "ENV_NAME": "local"
+  "WEB_HOST": "localhost:3001",
+  "ENV_NAME": "local",
+  "API_HOST": "https://api-pagestage-dev.devel.kakao.com",
+  "KAKAOPAGE_API_HOST": "https://dev-api2-page.kakao.com/",
+  "KAKAOPAGE_HOST": "https://dev-page.kakao.com/",
+  "KAKAO_JAVASCRIPT_KEY": "e4b3c374d91cdeeabd270f7feed5dc01",
+  "KAKAO_JAVASCRIPT_SDK_URL": "https://sandbox-developers.kakao.com/sdk/js/kakao.min.js",
+  "GA_MEASUREMENT_ID": "G-1S9YYVNV3X"
 }

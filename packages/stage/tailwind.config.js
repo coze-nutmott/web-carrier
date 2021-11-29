@@ -19,6 +19,7 @@ module.exports = {
   ],
   plugins: [
     require('./tailwind/layout'),
+    require('./tailwind/fontFamily'),
     require('./tailwind/textVariant').plugin,
     require('./tailwind/buttonVariant').plugin,
   ],

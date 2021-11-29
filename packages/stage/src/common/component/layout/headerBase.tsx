@@ -50,7 +50,7 @@ const HeaderBase = ({ bottom, children }: IProps) => {
             />
             <Text
               className="absolute -left-1 -top-12"
-              variant="s10_regular_grey02"
+              variant="s10_normal_grey02"
             >
               BETA
             </Text>

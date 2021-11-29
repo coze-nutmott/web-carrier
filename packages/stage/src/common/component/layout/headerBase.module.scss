@@ -4,6 +4,7 @@ $DESKTOP_WIDTH: map-get(variable.$SCREEN, Desktop);
 
 .logoImage {
   min-height: 25px;
+
   @media (min-width: #{$DESKTOP_WIDTH}px) {
     min-height: 30px;
   }
@@ -11,6 +12,7 @@ $DESKTOP_WIDTH: map-get(variable.$SCREEN, Desktop);
 
 .logoLink {
   flex: 1;
+
   @media (min-width: #{$DESKTOP_WIDTH}px) {
     flex: 0 1 auto;
   }
