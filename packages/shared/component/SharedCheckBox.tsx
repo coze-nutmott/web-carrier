@@ -1,12 +1,14 @@
-import styles from './SharedCheckBox.module.scss';
 import React, {
   ComponentType,
   CSSProperties,
   HTMLProps,
   ReactNode,
 } from 'react';
+
 import Image from 'next/image';
+
 import { SharedText } from '../component/SharedText';
+import styles from './SharedCheckBox.module.scss';
 
 export interface IProps<T> extends Omit<HTMLProps<HTMLInputElement>, 'label'> {
   imgChecked?: string;

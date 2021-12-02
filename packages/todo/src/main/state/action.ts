@@ -1,5 +1,7 @@
+import todo from 'common/component/AlertContent';
 import { ITodo } from 'common/type';
 import { IStateMain } from 'main/state/reducer';
+
 import { createAction, createBasicActions } from 'shared/util/redux';
 
 export enum ActionType {

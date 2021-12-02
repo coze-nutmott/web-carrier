@@ -1,5 +1,7 @@
-import axios, { Method } from 'axios';
 import { IncomingMessage, OutgoingMessage } from 'http';
+
+import axios, { Method } from 'axios';
+
 import { API_HOST } from 'shared/common/constant';
 import { pushLog } from 'shared/util/debug';
 

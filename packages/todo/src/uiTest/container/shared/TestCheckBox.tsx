@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import TestItem from 'shared/uiTest/component/TestItem';
+
 import { CheckBox } from 'common/component/shared';
+import TestItem from 'shared/uiTest/component/TestItem';
+
+import TestItem from 'shared/uiTest/component/TestItem';
 
 export default function TestCheckBox() {
   const [isChecked, setIsChecked] = useState(true);

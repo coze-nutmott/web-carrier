@@ -1,4 +1,5 @@
 import { ComponentType, forwardRef, HTMLProps, ReactNode, Ref } from 'react';
+
 import { SharedText, IProps as ITextProps } from '../component/SharedText';
 
 export interface IProps<BV extends string, TV extends string>

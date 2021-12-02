@@ -1,13 +1,15 @@
-import Event from 'event/container/Event';
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import React from 'react';
+
+import { Text } from 'common/component/shared';
+import Event from 'event/container/Event';
 import { IEvent, EventContext } from 'event/state/context';
+import { useRouter } from 'next/router';
+
 import useQueryParameter, {
   getStringOptional,
   getStringRequired,
 } from 'shared/hook/useQueryParameter';
-import { useRouter } from 'next/router';
-import { Text } from 'common/component/shared';
 import { getNowIsoString } from 'shared/util/date';
 
 type IProps = IEvent;

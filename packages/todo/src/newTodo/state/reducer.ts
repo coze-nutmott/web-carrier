@@ -1,9 +1,10 @@
-import { ActionType, actions } from './action';
 import {
   createReducer,
   ReducerActionHelper,
   createBasicReducerHandlers,
 } from 'shared/util/redux';
+
+import { ActionType, actions } from './action';
 
 export interface IStateNewTodo {
   nextId: number;

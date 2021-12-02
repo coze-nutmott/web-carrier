@@ -1,11 +1,13 @@
-import { ENV_NAME, IS_CLIENT } from 'shared/common/constant';
 import { Store, createStore } from 'redux';
 import { combineReducers, compose } from 'redux';
-import shared from 'shared/state/reducer';
-import { IStateShared } from 'shared/type';
+
 import common, { IStateCommon } from 'common/state/reducer';
 import main, { IStateMain } from 'main/state/reducer';
 import newTodo, { IStateNewTodo } from 'newTodo/state/reducer';
+
+import { ENV_NAME, IS_CLIENT } from 'shared/common/constant';
+import shared from 'shared/state/reducer';
+import { IStateShared } from 'shared/type';
 
 export interface IReduxState {
   shared: IStateShared;

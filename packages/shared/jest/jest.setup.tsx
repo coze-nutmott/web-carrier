@@ -1,5 +1,5 @@
-import { createStore, Reducer } from 'redux';
 import { Provider } from 'react-redux';
+import { createStore, Reducer } from 'redux';
 
 declare global {
   function getWrapperWithRedux(reducer?: Reducer): any;

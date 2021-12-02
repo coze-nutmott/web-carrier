@@ -1,7 +1,8 @@
-import { Text, TextButton } from 'common/component/shared';
-import { kRouter } from 'common/util/kRouter';
 import React from 'react';
 import { useSelector } from 'react-redux';
+
+import { Text, TextButton } from 'common/component/shared';
+import { kRouter } from 'common/util/kRouter';
 
 interface IProps {
   todoId: number;
