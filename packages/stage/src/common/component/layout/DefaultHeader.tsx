@@ -1,6 +1,8 @@
-import GenreLink from 'common/component/layout/genreLink';
-import HeaderBase from 'common/component/layout/headerBase';
-import { Anchor, Text, TextButton } from 'common/component/shared';
+import Link from 'next/link';
+import GenreLink from 'common/component/layout/GenreLink';
+import HeaderBase from 'common/component/layout/HeaderBase';
+
+import { Anchor } from 'common/component/shared';
 import { ROUTES_MAP } from 'common/constant';
 import useMedia from 'common/hook/useMedia';
 import { IRoute } from 'common/type';
@@ -11,6 +13,10 @@ import KakaoPageIcon from '@icons/icons-brand-kakaopage-black-white.svg';
 import HeartIcon from '@icons/icons-favorite-genre.svg';
 import LibraryIcon from '@icons/icons-library.svg';
 import SearchIcon from '@icons/icons-search.svg';
+import useSession from 'common/hook/useSession';
+import UserMenu from 'common/component/layout/UserMenu';
+import Flex from 'common/component/Flex';
+import HorizontalScroll from 'common/component/HorizontalScroll';
 
 // NOTE: 19세 작품 필터 비활성화
 // import { AdultFilterToggle } from '@/components/Toggle';
@@ -18,11 +24,9 @@ import SearchIcon from '@icons/icons-search.svg';
 
 /**
  * TODO
- * session
  * redux
  * 선호 장르 선택 팝업
  * 선호도 반영
- * 랭킹 메뉴
  */
 
 interface IProps {
@@ -37,10 +41,12 @@ const DefaultHeader = ({ children }: IProps) => {
     return String(router.query.genre) || '';
   }, [router]);
 
+  const { login, session } = useSession();
+
   return (
     <HeaderBase bottom={children}>
-      <div className="flex flex-1-0-full desktop:flex-1-0-auto order-1 desktop:order-none">
-        <div className="grid desktop:flex flex-wrap grid-flow-col items-center py-12 px-20 desktop:p-0 mx-0 desktop:mx-32 w-full max-w-full-view overflow-x-scroll desktop:overflow-x-visible overflow-y-hidden desktop:overflow-y-visible auto-cols-max">
+      <Flex className="flex-1-0-full desktop:flex-1-0-auto order-1 desktop:order-none">
+        <HorizontalScroll className="items-center py-12 px-20 desktop:p-0 mx-0 desktop:mx-32 w-full">
           {ROUTES_MAP.map(route => (
             <GenreLink
               key={route.id}
@@ -52,44 +58,48 @@ const DefaultHeader = ({ children }: IProps) => {
             route={RANKING_ROUTE}
             isActive={currentGenre === 'ranking'}
           />
-          <div className="flex">
-            <TextButton
-              variant="btn_transparent_grey01"
-              textVariant="s10_normal_grey02"
-            >
+          <Flex>
+            <button className="desktop:border-[#E7E7E9] font-medium border-none desktop:border-1 desktop:border-solid rounded-24 p-0 desktop:py-4 desktop:px-8 mr-20">
               <div className="flex items-center">
                 <div className="w-24 desktop:w-16 h-24 desktop:h-16 mr-4">
                   <HeartIcon />
                 </div>
-                <Text
-                  variant="s16_medium_grey02"
-                  className="hidden desktop:block"
-                >
+                <div className="hidden desktop:block text-12 text-gray30">
                   선호설정
-                </Text>
+                </div>
               </div>
-            </TextButton>
-          </div>
-        </div>
-      </div>
+            </button>
+          </Flex>
+        </HorizontalScroll>
+      </Flex>
       <div className="flex items-center ml-auto mr-16 desktop:mr-0">
-        {isDesktop && (
-          <Anchor
-            className="mr-20 w-20 h-20 text-grey02"
-            pageInfo={{ page: Page.Library }}
-          >
-            <LibraryIcon />
-          </Anchor>
+        {isDesktop && session.user && (
+          <Link href="/library/bookmarks" passHref>
+            <a className="mr-20 w-20 h-20 text-grey02">
+              <LibraryIcon />
+            </a>
+          </Link>
         )}
 
-        <Anchor
-          display="flex"
-          className="w-20 h-20 mr-16 desktop:mr-20 text-grey02"
-          pageInfo={{ page: Page.Search }}
-        >
-          <SearchIcon />
-        </Anchor>
-        {/* {session.user ? <UsersMenu /> : <LoginMenu />} */}
+        <Link href="/search" passHref>
+          <Flex as="a" className="w-20 h-20 mr-16 desktop:mr-20 text-grayFont">
+            <SearchIcon />
+          </Flex>
+        </Link>
+        {session.user ? (
+          <UserMenu />
+        ) : (
+          <Flex className="ml-auto items-center">
+            <button
+              className="cursor-pointer desktop:px-13 desktop:py-7 desktop:border-1 desktop:border-solid rounded-50 bg-transparent desktop:bg-black text-15 desktop:text-14 font-medium flex-shrink-0"
+              onClick={() => login()}
+            >
+              <Flex className="items-center text-black desktop:text-white">
+                로그인
+              </Flex>
+            </button>
+          </Flex>
+        )}
         <Anchor
           className="flex ml-16 desktop:20 p-6 desktop:p-8 items-center rounded-md desktop:rounded-sm bg-yellow"
           pageInfo="https://link-page.kakao.com/main"

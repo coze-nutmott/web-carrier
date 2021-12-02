@@ -102,3 +102,5 @@ export const ROUTES_MAP: IRoute[] = [
 
 export const CS_CENTER_URL =
   'https://cs.kakao.com/requests?service=10&locale=ko';
+
+export const ACCESS_TOKEN_KEY = '_access_token';

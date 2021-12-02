@@ -232,3 +232,9 @@ export interface IPages {
   contentLayoutType?: 'LINEAR' | 'GRID';
   novels: INovel[];
 }
+
+export interface IKakaoAuth {
+  refresh_token?: string;
+  access_token: string;
+  app_user_id: number;
+}

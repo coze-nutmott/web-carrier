@@ -9,6 +9,7 @@ import AlertContent from 'common/component/AlertContent';
 import Layout from 'common/component/layout';
 import 'common/style/base.scss';
 import ModalLayer from 'common/component/Modals/ModalLayer';
+import { SessionProvider } from 'common/component/SessionProvider';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -28,9 +29,11 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       }}
       AlertContentComponent={AlertContent}
     >
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <SessionProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </SessionProvider>
       <ModalLayer />
     </SharedContainer>
   );

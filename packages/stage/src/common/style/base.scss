@@ -28,6 +28,10 @@ textarea {
   }
 }
 
+#__next {
+  flex: 1 1 0%;
+}
+
 @font-face {
   font-family: 'GmarketSansMedium';
   font-style: normal;
@@ -315,8 +319,7 @@ textarea {
   font-family: 'NotoSerifKR';
   font-style: normal;
   font-weight: normal;
-  src:
-    url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff')
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff')
     format('woff');
 }
 
