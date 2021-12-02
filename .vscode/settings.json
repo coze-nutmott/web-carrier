@@ -17,5 +17,8 @@
   "stylelint.enable": true,
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "tailwindCSS.experimental.classRegex": [
+    ["\\w*[cC]lassName=\"([^\"]*)\""]
+  ],
 }
