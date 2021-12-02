@@ -13,6 +13,9 @@ function initialize(config, rootPath) {
 
 module.exports = withTm({
   initialize,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack(config) {
     config.plugins.push(
       new webpack.ProvidePlugin({

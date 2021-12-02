@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['next/core-web-vitals', 'plugin:prettier/recommended'],
+  extends: ['plugin:prettier/recommended', 'next/core-web-vitals'],
   plugins: ['kakaoent-plugin', 'prettier'],
   rules: {
     'kakaoent-plugin/no-date': 'error',

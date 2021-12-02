@@ -1,7 +1,7 @@
-// eslint-disable-next-line kakaoent-plugin/no-next-router
 import { ServerResponse } from 'http';
 
 import snakeCase from 'lodash/snakeCase';
+// eslint-disable-next-line kakaoent-plugin/no-next-router
 import router from 'next/router';
 
 import { WEB_HOST, IS_CLIENT } from '../common/constant';
