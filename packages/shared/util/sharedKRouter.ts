@@ -1,10 +1,12 @@
 // eslint-disable-next-line kakaoent-plugin/no-next-router
-import router from 'next/router';
-import { WEB_HOST, IS_CLIENT } from '../common/constant';
 import { ServerResponse } from 'http';
-import { pushLog } from '../util/debug';
-import { callIfFunc, getKeys } from '../util/common';
+
 import snakeCase from 'lodash/snakeCase';
+import router from 'next/router';
+
+import { WEB_HOST, IS_CLIENT } from '../common/constant';
+import { callIfFunc, getKeys } from '../util/common';
+import { pushLog } from '../util/debug';
 
 export let sharedKRouter: KRouter<any, any>;
 export default class KRouter<

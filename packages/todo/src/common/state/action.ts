@@ -1,4 +1,5 @@
 import { IStateCommon } from 'common/state/reducer';
+
 import { createBasicActions } from 'shared/util/redux';
 
 export enum ActionType {

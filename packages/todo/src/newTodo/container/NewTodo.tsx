@@ -1,14 +1,16 @@
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { CheckBox, TextButton } from 'common/component/shared';
 import { IPriority } from 'common/type';
 import { kRouter } from 'common/util/kRouter';
 import { actions as mainActions } from 'main/state/action';
 import SelectPriority from 'newTodo/component/SelectPriority';
 import { actions } from 'newTodo/state/action';
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import useBlockUnsavedChange from 'shared/hook/useBlockUnsavedChange';
+
 import { IS_DEBUG } from 'shared/common/constant';
 import { kToast } from 'shared/component/toast/KToast';
+import useBlockUnsavedChange from 'shared/hook/useBlockUnsavedChange';
 import { KeyboardKeyType } from 'shared/type';
 import { assert, getKeyboardKeyType } from 'shared/util/common';
 import { pushLog } from 'shared/util/debug';

@@ -1,7 +1,7 @@
-import differenceInSeconds from 'date-fns/differenceInSeconds';
-import parseIOS from 'date-fns/parseISO';
 import addSeconds from 'date-fns/addSeconds';
+import differenceInSeconds from 'date-fns/differenceInSeconds';
 import format from 'date-fns/format';
+import parseIOS from 'date-fns/parseISO';
 
 export function getDateDifference(
   dateLeft: string | number,

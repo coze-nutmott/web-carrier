@@ -1,22 +1,24 @@
-import {
-  createText,
-  IProps as ISharedTextProps,
-} from 'shared/component/SharedText';
-import { colors } from 'common/style/theme';
-import {
-  createTextButton,
-  IProps as ISharedTextButtonProps,
-} from 'shared/component/SharedTextButton';
 import { IButtonVariant, ITextVariant } from 'common/style';
+import { colors } from 'common/style/theme';
+import { IPageInfo, kRouter } from 'common/util/kRouter';
+import _ from 'lodash';
+
 import {
   createAnchor,
   IProps as ISharedAnchorProps,
 } from 'shared/component/SharedAnchor';
-import { IPageInfo, kRouter } from 'common/util/kRouter';
 import {
   createCheckBox,
   IProps as ISharedCheckBoxProps,
 } from 'shared/component/SharedCheckBox';
+import {
+  createText,
+  IProps as ISharedTextProps,
+} from 'shared/component/SharedText';
+import {
+  createTextButton,
+  IProps as ISharedTextButtonProps,
+} from 'shared/component/SharedTextButton';
 
 export type ITextProps = ISharedTextProps<ITextVariant>;
 export const Text = createText<ITextVariant>(colors);

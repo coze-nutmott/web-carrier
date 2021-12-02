@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query';
-import { IUser } from 'event/type';
+
 import callApi from 'common/util/api';
+import { IUser } from 'event/type';
 
 /**
  * 주요 포인트

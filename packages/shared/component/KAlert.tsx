@@ -5,7 +5,9 @@ import React, {
   CSSProperties,
   ComponentType,
 } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
+
 import { actions } from '../state/action';
 import { MODAL_ANIMATION_DURATION } from '../style/variable';
 import { KeyboardKeyType } from '../type';

@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
+
 import useEffectAfterTrue from '../hook/useEffectAfterTrue';
 
 describe('useEffectAfterTrue', () => {

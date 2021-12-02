@@ -1,18 +1,19 @@
 import { NextPage } from 'next';
 import React from 'react';
-import useQueryParameter, {
-  getStringOptional,
-} from 'shared/hook/useQueryParameter';
+
 import { kRouter } from 'common/util/kRouter';
-import TestMain from 'shared/uiTest/component/TestMain';
+import TestAnchor from 'uiTest/container/shared/TestAnchor';
+import TestCheckBox from 'uiTest/container/shared/TestCheckBox';
+import TestKAlert from 'uiTest/container/shared/TestKAlert';
+import TestKToast from 'uiTest/container/shared/TestKToast';
 import TestText from 'uiTest/container/shared/TestText';
 import TestTextButton from 'uiTest/container/shared/TestTextButton';
 import TestUser from 'uiTest/container/TestUser';
-import TestKToast from 'uiTest/container/shared/TestKToast';
-import TestCheckBox from 'uiTest/container/shared/TestCheckBox';
-import TestAnchor from 'uiTest/container/shared/TestAnchor';
-import TestKAlert from 'uiTest/container/shared/TestKAlert';
 
+import useQueryParameter, {
+  getStringOptional,
+} from 'shared/hook/useQueryParameter';
+import TestMain from 'shared/uiTest/component/TestMain';
 interface IQuery {
   name?: string;
 }

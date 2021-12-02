@@ -1,10 +1,11 @@
+import { useCallback, useEffect, useRef } from 'react';
+
+import { assert } from '../util/common';
 import {
   getLocalStorageObject,
   setLocalStorageObject,
 } from '../util/localStorage';
 import useLocalStorage from './useLocalStorage';
-import { useCallback, useEffect, useRef } from 'react';
-import { assert } from '../util/common';
 
 type IKey = string | number;
 type IMap<V> = { [k in IKey]: V };
