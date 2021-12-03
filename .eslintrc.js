@@ -6,8 +6,6 @@ module.exports = {
     'kakaoent-plugin/no-next-router': 'error',
     'kakaoent-plugin/disallowed-element': 'error',
     'react-hooks/exhaustive-deps': 'error',
-    'no-unused-vars': 'error',
-    'no-console': 'error',
     'import/order': [
       /**
        * 어디선가 설정값이 덮어써지는데, npm run lint할 때와 vscode formatOnSave할 때의 order 순서가 다르다.
