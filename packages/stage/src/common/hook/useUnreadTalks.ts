@@ -1,3 +1,6 @@
+// @ts-nocheck
+// TODO: Coze: unlock nocheck option later
+
 import { queryFn } from 'common/util/api';
 import { useQuery } from 'react-query';
 import useSession from './useSession';
