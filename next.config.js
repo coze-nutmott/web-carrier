@@ -1,5 +1,7 @@
 const webpack = require('webpack');
+
 const withTm = require('next-transpile-modules')(['shared']);
+
 const path = require('path');
 const fs = require('fs');
 
@@ -11,6 +13,9 @@ function initialize(config, rootPath) {
 
 module.exports = withTm({
   initialize,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack(config) {
     config.plugins.push(
       new webpack.ProvidePlugin({

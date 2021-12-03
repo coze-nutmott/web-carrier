@@ -1,5 +1,6 @@
-import styles from './SelectPriority.module.scss';
 import { IPriority } from 'common/type';
+
+import styles from './SelectPriority.module.scss';
 
 interface IProps {
   priority: IPriority;

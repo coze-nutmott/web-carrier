@@ -1,10 +1,12 @@
-import { ActionType, actions } from './action';
+import { ITodo } from 'common/type';
+
 import {
   createReducer,
   ReducerActionHelper,
   createBasicReducerHandlers,
 } from 'shared/util/redux';
-import { ITodo } from 'common/type';
+
+import { ActionType, actions } from './action';
 
 export interface IStateMain {
   todos: ITodo[];

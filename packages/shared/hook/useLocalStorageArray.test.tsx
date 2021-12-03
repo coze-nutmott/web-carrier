@@ -1,6 +1,7 @@
 import { renderHook, act } from '@testing-library/react-hooks';
-import useLocalStorageArray from './useLocalStorageArray';
+
 import { deleteLocalStorage } from '../util/localStorage';
+import useLocalStorageArray from './useLocalStorageArray';
 
 describe('useLocalStorageArray', () => {
   const STORAGE_KEY = 'test-key';

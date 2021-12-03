@@ -4,16 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "echo \"Error: no test specified\" && exit 1",
-    "format": "npx prettier --write \"**/*.{ts,tsx}\" --config .prettierrc"
+    "start": "npm run start -w=$(grep PACKAGE_NAME .env | cut -d '=' -f2)",
+    "dev": "npm run dev -w=$(grep PACKAGE_NAME .env | cut -d '=' -f2)",
+    "build": "npm run build -w=$(grep PACKAGE_NAME .env | cut -d '=' -f2)",
+    "real": "npm run real -w=$(grep PACKAGE_NAME .env | cut -d '=' -f2)",
+    "tsc": "npm run tsc -w=$(grep PACKAGE_NAME .env | cut -d '=' -f2)",
+    "lint": "npm run lint -w=$(grep PACKAGE_NAME .env | cut -d '=' -f2)",
+    "format": "npx prettier --write \"**/*.{ts,tsx}\" --config .prettierrc",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,scss}": "npm run lint --workspaces"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "workspaces": [
-    "packages/shared",
-    "packages/stage",
-    "packages/todo"
+    "./packages/*"
   ],
   "dependencies": {
     "axios": "0.22.0",
@@ -26,7 +33,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-flatpickr": "3.10.7",
-    "react-hook-form": "6.0.1",
+    "react-hook-form": "6.10.0",
     "react-modal": "3.14.3",
     "react-query": "3.25.0",
     "react-redux": "7.2.5"
@@ -35,6 +42,8 @@
     "@babel/core": "7.15.5",
     "@babel/preset-env": "7.15.6",
     "@babel/preset-typescript": "7.15.0",
+    "@testing-library/jest-dom": "5.15.0",
+    "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
     "@types/jest": "27.0.1",
     "@types/lodash": "4.14.175",
@@ -47,13 +56,17 @@
     "babel-jest": "27.2.0",
     "babel-plugin-dynamic-import-node": "2.3.3",
     "babel-plugin-inline-react-svg": "2.0.1",
+    "dotenv": "10.0.0",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-kakaoent-plugin": "./lintRule",
     "eslint-plugin-prettier": "4.0.0",
+    "husky": "7.0.4",
+    "identity-obj-proxy": "3.0.0",
     "jest": "27.2.0",
     "lerna": "4.0.0",
+    "lint-staged": "12.0.2",
     "postcss": "8.3.6",
     "prettier": "2.4.1",
     "sass": "1.41.1",

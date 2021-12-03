@@ -1,8 +1,11 @@
-import PreventMobileBodyScroll from 'shared/component/PreventMobileBodyScroll';
 import React, { ReactElement } from 'react';
-import styles from './AlertContent.module.scss';
-import { IAlertContentProps } from 'shared/component/KAlert';
+
 import { TextButton, Text } from 'common/component/shared';
+
+import { IAlertContentProps } from 'shared/component/KAlert';
+import PreventMobileBodyScroll from 'shared/component/PreventMobileBodyScroll';
+
+import styles from './AlertContent.module.scss';
 
 export type IProps = IAlertContentProps;
 

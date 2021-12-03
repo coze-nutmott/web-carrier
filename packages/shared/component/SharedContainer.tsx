@@ -1,15 +1,17 @@
-import { Store } from 'redux';
-import { Provider } from 'react-redux';
-import { QueryClient, QueryClientProvider } from 'react-query';
 import React, { ReactNode, useEffect } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
+import { Store } from 'redux';
+
+import { Router } from 'next/router';
+
+import { actions } from '../state/action';
+import { IStateDefault } from '../type';
+import { sharedKRouter } from '../util/sharedKRouter';
+import { KAlertComponent, IProps as IKAlertProps } from './KAlert';
 import KToast from './toast/KToast';
 import 'shared/style/index.scss';
 import 'tailwindcss/tailwind.css';
-import { actions } from '../state/action';
-import { IStateDefault } from '../type';
-import { KAlertComponent, IProps as IKAlertProps } from './KAlert';
-import { sharedKRouter } from '../util/sharedKRouter';
-import { Router } from 'next/router';
 
 interface IProps<TextVariant = string> {
   children: ReactNode;

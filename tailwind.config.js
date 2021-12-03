@@ -1,7 +1,9 @@
+require('dotenv/config');
+
 /**
  * 주요 포인트
  * tailwind intellisense 플러그인 이슈 때문에
- * 각 project의 branch 에서 해당하는 tailwind config 파일 path를 설정해서 사용합니다
+ * .env 파일에 PACKAGE_NAME을 명시해야 합니다. (ex. PACKAGE_NAME=todo)
  */
-const config = require('./packages/stage/tailwind.config.js');
+const config = require(`./packages/${process.env.PACKAGE_NAME}/tailwind.config.js`);
 module.exports = config;

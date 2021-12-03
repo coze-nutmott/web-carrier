@@ -1,14 +1,15 @@
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import Toast, {
   IRenderProps1,
   IRenderProps2,
 } from '../../component/toast/Toast';
 import useEffectAfterTrue from '../../hook/useEffectAfterTrue';
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../state/action';
 import { IToast } from '../../type';
-import styles from './KToast.module.scss';
 import { getSharedStore } from '../SharedContainer';
+import styles from './KToast.module.scss';
 
 type IProps<T extends string> = (IRenderProps1 | IRenderProps2<T>) & {
   zIndex: number;

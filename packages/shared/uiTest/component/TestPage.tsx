@@ -1,6 +1,9 @@
-import { SharedCheckBox } from '../../component/SharedCheckBox';
-import { SharedTextButton } from '../../component/SharedTextButton';
 import React, { ReactNode, useMemo, useState } from 'react';
+
+import { SharedCheckBox } from '../../component/SharedCheckBox';
+import { UI_TEST_PARAMS } from '../../component/SharedContainer';
+import { SharedText } from '../../component/SharedText';
+import { SharedTextButton } from '../../component/SharedTextButton';
 import { TestPageContext } from '../../uiTest/context';
 import {
   ITestCheckbox,
@@ -9,8 +12,6 @@ import {
   ITestButton,
 } from '../../uiTest/type';
 import styles from './TestPage.module.scss';
-import { SharedText } from '../../component/SharedText';
-import { UI_TEST_PARAMS } from '../../component/SharedContainer';
 
 interface IProps {
   children: ReactNode;

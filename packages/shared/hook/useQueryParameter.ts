@@ -1,6 +1,7 @@
-import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+
 import snakeCase from 'lodash/snakeCase';
+import { useRouter } from 'next/router';
 
 export default function useQueryParameter<Q extends { [key: string]: any }>(
   items: Array<{ name: keyof Q & string; getter: (value?: string) => any }>,

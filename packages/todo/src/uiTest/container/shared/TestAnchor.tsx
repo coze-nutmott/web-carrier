@@ -1,6 +1,8 @@
+import React from 'react';
+
 import { Anchor, Text } from 'common/component/shared';
 import { kRouter, Page } from 'common/util/kRouter';
-import React from 'react';
+
 import TestItem from 'shared/uiTest/component/TestItem';
 import useTestCheckBox from 'shared/uiTest/hook/useTestCheckBox';
 

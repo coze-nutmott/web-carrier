@@ -1,3 +1,5 @@
+import format from 'date-fns/format';
+
 import {
   getDateDifference,
   parseDate,
@@ -7,7 +9,6 @@ import {
   getIsBetween,
   _getTimestampForRegionFromUtcDate,
 } from './date';
-import format from 'date-fns/format';
 
 describe('parseDate', () => {
   it('빈 문자열을 넣으면 현재 시각 Date 객체가 나옴', () => {

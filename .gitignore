@@ -6,3 +6,10 @@ node_modules
 .vscode/launch.json
 out
 .cache
+.eslintcache
+.env
+
+# individual customization ignores
+.envrc
+
+

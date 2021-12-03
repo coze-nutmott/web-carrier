@@ -27,7 +27,7 @@ const HeaderBase = ({ bottom, children }: IProps) => {
   return (
     <header className="border-b border-divideLine relative">
       <Wrapper
-        variants="desktopOnly"
+        variant="desktopOnly"
         className={cn(
           'flex-wrap desktop:flex-nowrap text-black px-0 desktop:px-24 py-0 desktop:py-18 items-center my-0',
           styles.headerContainer,

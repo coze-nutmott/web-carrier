@@ -1,4 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { __setMockQuery } from 'next/router';
+
 import useQueryParameter, {
   getNumberOptional,
   getNumberRequired,
@@ -6,7 +8,6 @@ import useQueryParameter, {
   getStringRequired,
 } from '../hook/useQueryParameter';
 // eslint-disable-next-line kakaoent-plugin/no-next-router
-import { __setMockQuery } from 'next/router';
 
 describe('query name', () => {
   it('snake_case to camelCase', () => {

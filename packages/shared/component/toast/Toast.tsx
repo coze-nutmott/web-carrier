@@ -1,7 +1,9 @@
-import styles from './Toast.module.scss';
 import React, { ReactElement } from 'react';
+
 import Image from 'next/image';
+
 import { SharedText } from '../../component/SharedText';
+import styles from './Toast.module.scss';
 
 export type IProps<T extends string> =
   | (ICommonProps & IRenderProps1)

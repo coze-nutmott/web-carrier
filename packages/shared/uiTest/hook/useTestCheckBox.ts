@@ -1,5 +1,6 @@
-import useEffectAfterTrue from '../../hook/useEffectAfterTrue';
 import { useContext } from 'react';
+
+import useEffectAfterTrue from '../../hook/useEffectAfterTrue';
 import { TestPageContext } from '../../uiTest/context';
 
 export default function useTestCheckBox<V1 = true, V2 = false>({

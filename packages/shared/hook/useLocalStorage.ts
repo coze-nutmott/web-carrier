@@ -1,4 +1,8 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+
+import debounce from 'lodash/debounce';
+
 import {
   getLocalStorageBool,
   setLocalStorageBool,
@@ -12,8 +16,6 @@ import {
   subscribeStorage,
   unsubscribeStorage,
 } from '../util/localStorage';
-import debounce from 'lodash/debounce';
-import { useSelector } from 'react-redux';
 
 type IStorageValue = boolean | number | string | object;
 

@@ -1,9 +1,11 @@
+import React, { useContext } from 'react';
+
 import { Text, TextButton } from 'common/component/shared';
 import { kRouter } from 'common/util/kRouter';
-import React, { useContext } from 'react';
+import User from 'event/component/User';
 import { EventContext } from 'event/state/context';
 import { useServerUser } from 'event/state/server';
-import User from 'event/component/User';
+
 import { kAlert } from 'shared/component/KAlert';
 import { getNowIsoString } from 'shared/util/date';
 

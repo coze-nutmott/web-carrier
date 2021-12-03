@@ -1,9 +1,11 @@
 import React from 'react';
+
+import { TextButton } from 'common/component/shared';
+import { buttonVariants } from 'common/style/buttonVariant';
+import { textVariants } from 'common/style/textVariant';
+
 import TestItem from 'shared/uiTest/component/TestItem';
 import useTestSelect from 'shared/uiTest/hook/useTestSelect';
-import { TextButton } from 'common/component/shared';
-import { textVariants } from 'common/style/textVariant';
-import { buttonVariants } from 'common/style/buttonVariant';
 
 export default function TestTextButton() {
   const textVariant = useTestSelect({

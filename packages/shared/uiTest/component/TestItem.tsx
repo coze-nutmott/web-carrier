@@ -1,7 +1,8 @@
 import React, { ReactNode } from 'react';
-import styles from './TestItem.module.scss';
-import { SharedText } from '../../component/SharedText';
+
 import { UI_TEST_PARAMS } from '../../component/SharedContainer';
+import { SharedText } from '../../component/SharedText';
+import styles from './TestItem.module.scss';
 
 interface IProps {
   title: string;
