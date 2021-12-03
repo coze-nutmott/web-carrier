@@ -73,6 +73,6 @@ export default function callApi<T>({
   });
 }
 
-export const queryFn = ({ queryKey }: QueryFunctionContext) => {
-  return callApi({ url: queryKey.join('') });
-};
+export function queryFn<T>({ queryKey }: QueryFunctionContext) {
+  return callApi<T>({ url: queryKey.join('') });
+}

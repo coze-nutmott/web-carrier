@@ -1,0 +1,6 @@
+.space-#{space} {
+  &::before,
+  &::after {
+    width: #{space};
+  }
+}

@@ -3,11 +3,11 @@ import { Row } from 'common/component/Flex';
 
 interface IProps extends HTMLAttributes<HTMLElement> {
   as?: keyof ReactHTML;
-  variants?: 'desktopOnly';
+  variant?: 'desktopOnly';
 }
 export default function Wrapper({
   as = 'div',
-  variants,
+  variant,
   className,
   ...props
 }: IProps) {
@@ -15,8 +15,8 @@ export default function Wrapper({
     <Row
       as={as}
       className={cn(
-        'mx-auto desktop:px-24',
-        { 'px-18': variants !== 'desktopOnly' },
+        'flex-row max-w-default mx-auto desktop:px-24',
+        { 'px-18': variant !== 'desktopOnly' },
         className,
       )}
       {...props}

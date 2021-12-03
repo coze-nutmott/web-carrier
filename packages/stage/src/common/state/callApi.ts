@@ -1,7 +1,7 @@
 import { ACCESS_TOKEN_KEY } from 'common/constant';
 import { IKakaoAuth, IUser } from 'common/type';
 import callApi from 'common/util/api';
-import { getQueryString } from 'common/util/query';
+import { getQueryString } from 'common/util/path';
 import Cookies from 'js-cookie';
 import { pushLog } from 'shared/util/debug';
 
