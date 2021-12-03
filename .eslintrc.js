@@ -7,7 +7,7 @@ module.exports = {
     'kakaoent-plugin/disallowed-element': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'import/order': [
-      'error',
+      'off',
       {
         groups: [
           'builtin',
