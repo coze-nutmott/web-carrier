@@ -15,6 +15,8 @@ import { Anchor, Text } from 'common/component/shared';
 import { Page } from 'common/util/kRouter';
 
 import styles from './headerBase.module.scss';
+import A11y from 'common/component/A11y';
+import Wrapper from 'common/component/Wrapper';
 
 interface IProps {
   bottom?: React.ReactNode;
@@ -23,14 +25,15 @@ interface IProps {
 
 const HeaderBase = ({ bottom, children }: IProps) => {
   return (
-    <header className="border-b border-grey01 relative">
-      <div
+    <header className="border-b border-divideLine relative">
+      <Wrapper
+        variants="desktopOnly"
         className={cn(
-          'flex flex-wrap desktop:flex-nowrap px-0 desktop:px-24 py-0 desktop:py-18 items-center text-black mx-auto',
+          'flex-wrap desktop:flex-nowrap text-black px-0 desktop:px-24 py-0 desktop:py-18 items-center my-0',
           styles.headerContainer,
         )}
       >
-        <h1 className="h-1 w-1 hidden">카카오페이지 스테이지</h1>
+        <A11y as="h1">카카오페이지 스테이지</A11y>
 
         <div
           className={cn(
@@ -50,14 +53,14 @@ const HeaderBase = ({ bottom, children }: IProps) => {
             />
             <Text
               className="absolute -left-1 -top-12"
-              variant="s10_normal_grey02"
+              variant="s10_normal_grey"
             >
               BETA
             </Text>
           </Anchor>
         </div>
         {children}
-      </div>
+      </Wrapper>
       {bottom}
     </header>
   );

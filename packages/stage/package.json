@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "ts-node ./src/server.ts",
     "start": "next start -p 3001",
     "build": "next build",
     "real": "next start",
@@ -14,11 +14,14 @@
     "format": "npx prettier --write \"**/*.{ts,tsx}\" --config ../../.prettierrc"
   },
   "dependencies": {
-    "body-scroll-lock": "3.0.3"
+    "body-scroll-lock": "3.0.3",
+    "js-cookie": "3.0.1"
   },
   "devDependencies": {
+    "@types/body-scroll-lock": "3.1.0",
+    "@types/js-cookie": "^3.0.1",
     "babel-plugin-inline-react-svg": "2.0.1",
     "babel-plugin-module-resolver": "4.1.0",
-    "@types/body-scroll-lock": "3.1.0"
+    "ts-node": "10.4.0"
   }
 }

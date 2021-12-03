@@ -1,4 +1,4 @@
-import DefaultHeader from 'common/component/layout/defaultHeader';
+import DefaultHeader from 'common/component/layout/DefaultHeader';
 import React, { ComponentType, ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 
