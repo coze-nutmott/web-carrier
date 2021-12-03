@@ -2,7 +2,7 @@ import A11y from 'common/component/A11y';
 import ActiveLink from 'common/component/ActiveLink';
 import Flex from 'common/component/Flex';
 import HorizontalScroll from 'common/component/HorizontalScroll';
-import DefaultHeader from 'common/component/layout/defaultHeader';
+import DefaultHeader from 'common/component/layout/DefaultHeader';
 import Wrapper from 'common/component/Wrapper';
 import { ROUTES_MAP } from 'common/constant';
 import Link from 'next/link';
