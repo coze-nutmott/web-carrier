@@ -42,7 +42,7 @@ const BUTTON_VARIANTS = {
     border: `1px solid ${colors.black}`,
     'border-radius': '25px',
   },
-  btn_transparent_gray: {
+  btn_transparent_grey01: {
     'background-color': colors.transparent,
     border: `1px solid ${colors.gray}`,
     'border-radius': '24px',

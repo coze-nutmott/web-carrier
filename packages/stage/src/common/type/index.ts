@@ -167,6 +167,7 @@ export interface INovel {
   editedAt: ITimestamp;
   onlyStage: boolean;
   stageOn: boolean;
+  pageGo?: boolean;
 }
 interface INovelContest {
   contentType: string;
@@ -232,6 +233,49 @@ export interface IPages {
   contentLayoutType?: 'LINEAR' | 'GRID';
   novels: INovel[];
 }
+export interface IBanner {
+  id: number;
+  desktopImage: IFile;
+  mobileImage: IFile;
+  imageType: 'DESKTOP' | 'MOBILE';
+  link: string;
+  newTab: boolean;
+  placement: 'GENRE_HOME_TOP' | 'GENRE_HOME_BOTTOM';
+  priority: number;
+  title: string;
+  backgroundColor?: string;
+}
+
+export interface IPaginatedResponse<T> {
+  content: T[];
+  pageable: {
+    sort: {
+      sorted: boolean;
+      unsorted: boolean;
+      empty: boolean;
+    };
+    offset: number;
+    pageNumber: number;
+    pageSize: number;
+    unpaged: boolean;
+    paged: boolean;
+  };
+  first: boolean;
+  last: boolean;
+  totalElements: number;
+  numberOfElements: number;
+  empty: true;
+  totalPages: number;
+  number: number;
+  size: number;
+  sort: {
+    sorted: boolean;
+    unsorted: boolean;
+    empty: boolean;
+  };
+}
+
+export type Nullable<T> = T | null;
 
 export interface IKakaoAuth {
   refresh_token?: string;

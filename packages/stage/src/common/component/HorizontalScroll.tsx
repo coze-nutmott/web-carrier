@@ -1,13 +1,15 @@
 import { HTMLAttributes } from 'react';
+import styles from 'common/component/HorizontalScroll.module.scss';
 
 interface IProps extends HTMLAttributes<HTMLDivElement> {
-  space?: number;
+  space?: '12px' | '16px' | '24px';
 }
 
 export default function HorizontalScroll({
   space,
   children,
   className,
+  style,
 }: IProps) {
   return (
     <div
@@ -24,13 +26,13 @@ export default function HorizontalScroll({
         'desktop:overflow-y-visible',
         'before:flex-grow-0',
         'after:flex-grow-0',
-        `before:w-${space}`,
-        `after:w-${space}`,
         'desktop:after:hidden',
         'desktop:before:hidden',
         'auto-cols-max',
+        space ? styles[`space-${space}`] : '',
         className,
       )}
+      style={style}
     >
       {children}
     </div>

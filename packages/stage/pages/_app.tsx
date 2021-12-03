@@ -9,33 +9,37 @@ import AlertContent from 'common/component/AlertContent';
 import Layout from 'common/component/layout';
 import 'common/style/base.scss';
 import ModalLayer from 'common/component/Modals/ModalLayer';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { SessionProvider } from 'common/component/SessionProvider';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
+  const client = new QueryClient();
   return (
-    <SharedContainer<ITextVariant>
-      router={router}
-      toastTextVariant="s16_normal_white"
-      toastZIndex={ZIndex.Toast}
-      modalZIndex={ZIndex.Modal}
-      getStore={getStore}
-      uiTestParams={{
-        buttonVariant: 'btn_gray',
-        activeButtonVariant: 'btn_transparent_yellow',
-        buttonTextVariant: 's16_normal_black',
-        labelTextVariant: 's16_normal_black',
-        checkBoxTextVariant: 's16_normal_black',
-        inputZIndex: ZIndex.Modal - 1,
-      }}
-      AlertContentComponent={AlertContent}
-    >
-      <SessionProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </SessionProvider>
-      <ModalLayer />
-    </SharedContainer>
+    <QueryClientProvider client={client}>
+      <SharedContainer<ITextVariant>
+        router={router}
+        toastTextVariant="s16_normal_white"
+        toastZIndex={ZIndex.Toast}
+        modalZIndex={ZIndex.Modal}
+        getStore={getStore}
+        uiTestParams={{
+          buttonVariant: 'btn_gray',
+          activeButtonVariant: 'btn_transparent_yellow',
+          buttonTextVariant: 's16_normal_black',
+          labelTextVariant: 's16_normal_black',
+          checkBoxTextVariant: 's16_normal_black',
+          inputZIndex: ZIndex.Modal - 1,
+        }}
+        AlertContentComponent={AlertContent}
+      >
+        <SessionProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </SessionProvider>
+        <ModalLayer />
+      </SharedContainer>
+    </QueryClientProvider>
   );
 }
 export default MyApp;

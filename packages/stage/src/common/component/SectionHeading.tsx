@@ -9,10 +9,11 @@ export default function SectionHeading({
   href,
   title,
   children,
+  className,
   ...props
 }: IProps) {
   return (
-    <Row className="w-full items-center" {...props}>
+    <Row className={cn('w-full items-center', className)} {...props}>
       <h2 className="text-18 desktop:text-22 font-bold">{title}</h2>
       {children}
       {href && (
