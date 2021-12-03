@@ -33,10 +33,21 @@ jobs:
       - name: extract package name
         run: echo "PACKAGE_NAME=$(echo ${GITHUB_REF_NAME} | cut -d'/' -f 1)" >> $GITHUB_ENV
 
-      - run: npm run test_ci -w=${{env.PACKAGE_NAME}} -w=shared
-      - run: npm run lint -w=${{env.PACKAGE_NAME}} -w=shared
-      - run: npm run tsc -w=${{env.PACKAGE_NAME}} -w=shared
-      - run: npm run build -w=${{env.PACKAGE_NAME}} -w=shared
+      - name: Test on all workspaces
+        if: env.PACKAGE_NAME == 'base'
+        run: |
+          npm run test_ci --workspaces --if-present
+          npm run lint --workspaces --if-present
+          npm run tsc --workspaces --if-present
+          npm run build --workspaces --if-present
+
+      - name: Test only on the working workspace
+        if: env.PACKAGE_NAME != 'base'
+        run: |
+          npm run test_ci -w=${{env.PACKAGE_NAME}} -w=shared --if-present
+          npm run lint -w=${{env.PACKAGE_NAME}} -w=shared --if-present
+          npm run tsc -w=${{env.PACKAGE_NAME}} -w=shared --if-present
+          npm run build -w=${{env.PACKAGE_NAME}} -w=shared --if-present
 
       - name: Send slack when failed
         uses: 8398a7/action-slack@v3
