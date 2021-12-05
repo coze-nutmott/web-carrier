@@ -97,6 +97,14 @@ export interface INickname {
   isDeleted?: boolean;
 }
 
+export type IFlashType = 'success' | 'error';
+
+export interface IFlash {
+  id: number;
+  message: string;
+  type: IFlashType;
+}
+
 export interface IFile {
   byteSize: number;
   checksum: string;

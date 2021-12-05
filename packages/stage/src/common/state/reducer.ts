@@ -4,7 +4,7 @@ import {
   ReducerActionHelper,
   createBasicReducerHandlers,
 } from 'shared/util/redux';
-import { IKakaoAuth, IUser } from 'common/type';
+import { IFlash, IKakaoAuth, IUser } from 'common/type';
 
 type ITheme = 'light' | 'dark' | 'green';
 
@@ -16,9 +16,12 @@ interface ISessionState {
   kakao?: IKakaoAuth;
 }
 
+type IFlashState = IFlash[];
+
 export interface IStateCommon {
   theme: ITheme;
   session: ISessionState;
+  flash: IFlashState;
 }
 
 export const INITIAL_STATE: IStateCommon = {
@@ -26,6 +29,7 @@ export const INITIAL_STATE: IStateCommon = {
   session: {
     status: 'unknown',
   },
+  flash: [],
 };
 
 export default createReducer<IStateCommon, ReducerActionHelper<typeof actions>>(
@@ -47,6 +51,12 @@ export default createReducer<IStateCommon, ReducerActionHelper<typeof actions>>(
     [ActionType.RefreshSession]: (state, action) => {
       state.session.accessToken = action.payload.accessToken;
       state.session.kakao = action.payload.kakao;
+    },
+    [ActionType.PushFlash]: (state, action) => {
+      state.flash.push(action.payload);
+    },
+    [ActionType.PopFlash]: state => {
+      state.flash.shift();
     },
   },
 );
