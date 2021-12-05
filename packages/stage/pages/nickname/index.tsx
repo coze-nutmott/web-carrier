@@ -54,7 +54,7 @@ export default function ProfilePage() {
       <Wrapper className="justify-center pt-92 mb-120">
         <Column className="w-330">
           <Flex className="justify-center">
-            <input hidden name="p rofileId" ref={register} />
+            <input hidden name="profileId" ref={register} />
             {/*<Pro*/}
           </Flex>
           <Flex
