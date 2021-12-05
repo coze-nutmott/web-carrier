@@ -105,6 +105,11 @@ export interface IFlash {
   type: IFlashType;
 }
 
+export interface IProfileFormValues {
+  nickname: string;
+  profileId?: string;
+}
+
 export interface IFile {
   byteSize: number;
   checksum: string;
@@ -289,4 +294,9 @@ export interface IKakaoAuth {
   refresh_token?: string;
   access_token: string;
   app_user_id: number;
+}
+
+export interface IResultResponse {
+  status: number;
+  result: string;
 }

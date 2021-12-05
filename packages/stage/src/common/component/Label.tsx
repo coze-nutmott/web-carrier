@@ -1,7 +1,8 @@
-import Flex from 'common/component/Flex';
-import { HTMLAttributes } from 'react';
+import { LabelHTMLAttributes } from 'react';
 
-interface IProps extends HTMLAttributes<HTMLDivElement> {
+import Flex from 'common/component/Flex';
+
+interface IProps extends LabelHTMLAttributes<HTMLLabelElement> {
   required?: boolean;
 }
 

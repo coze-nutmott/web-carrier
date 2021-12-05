@@ -1,9 +1,11 @@
-import { errorMessage, ERROR_MESSAGES } from 'common/util/errorMessage';
 import { useDispatch } from 'react-redux';
-import { IFlash } from 'common/type';
 import { Dispatch } from 'redux';
-import { actions as commonActions } from 'common/state/action';
+
 import { parseDate } from 'shared/util/date';
+
+import { actions as commonActions } from 'common/state/action';
+import { IFlash } from 'common/type';
+import { errorMessage, ERROR_MESSAGES } from 'common/util/errorMessage';
 
 function wait(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -38,7 +40,7 @@ function useFlash(): {
   const dispatch = useDispatch();
 
   const showSuccessMessage = (message: string) => {
-    // dispatch(showFlash({ message, type: 'success' }));
+    showFlash({ message, type: 'success' }, dispatch); // do not wait async
   };
 
   const showErrorMessage = (
@@ -46,7 +48,7 @@ function useFlash(): {
     defaultMessage = ERROR_MESSAGES.DEFAULT,
   ) => {
     const message = messageOrDefault(value, defaultMessage);
-    showFlash({ message, type: 'error' }, dispatch); // do not take return
+    showFlash({ message, type: 'error' }, dispatch); // do not wait async
   };
   return {
     showSuccessMessage,
