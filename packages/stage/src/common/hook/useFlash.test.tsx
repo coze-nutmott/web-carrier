@@ -6,6 +6,7 @@ describe('useFlash', () => {
     const { result } = renderHook(() => useFlash(), {
       wrapper: global.getWrapperWithRedux(),
     });
-    console.log('[COZE_LOG] result', result.current);
+    // TODO: COZE: implement this
+    console.info(result.current);
   });
 });

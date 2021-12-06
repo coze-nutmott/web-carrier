@@ -11,9 +11,9 @@ import { IFile } from 'common/type';
 import { ERROR_MESSAGES } from 'common/util/errorMessage';
 import { uploadProfileImage } from 'nickname/state/callApi';
 
-import DeleteIcon from '@/images/icons-delete.svg';
-import ImageIcon from '@/images/icons-image.svg';
-import PointIcon from '@/images/icons-point.svg';
+import DeleteIcon from '@icons/icons-delete.svg';
+import ImageIcon from '@icons/icons-image.svg';
+import PointIcon from '@icons/icons-point.svg';
 
 interface IProps extends HTMLProps<HTMLDivElement> {
   onChanged: (image: IFile | undefined) => void;

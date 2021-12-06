@@ -4,6 +4,6 @@ module.exports = {
     '@next/next/no-img-element': 0,
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
-    'no-console': 'error',
+    'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
   },
 };
