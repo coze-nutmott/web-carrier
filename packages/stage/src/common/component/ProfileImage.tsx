@@ -1,16 +1,13 @@
+import { HTMLProps } from 'react';
+
 import Flex from 'common/component/Flex';
 import { IFile } from 'common/type';
-import { HTMLProps } from 'react';
 
 interface IProps extends HTMLProps<HTMLDivElement> {
   profile?: IFile | null;
 }
 
-export default function PropfileImage({
-  profile,
-  className,
-  ...props
-}: IProps) {
+export default function ProfileImage({ profile, className, ...props }: IProps) {
   return (
     <Flex
       className={cn(

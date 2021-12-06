@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "body-scroll-lock": "3.0.3",
+    "fabric": "4.5.6",
     "js-cookie": "3.0.1",
     "react-hook-form": "6.10.0",
     "react-slick": "0.28.1",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@types/body-scroll-lock": "3.1.0",
+    "@types/fabric": "4.5.6",
     "@types/js-cookie": "3.0.1",
     "@types/react-slick": "0.23.7",
     "babel-plugin-inline-react-svg": "2.0.1",

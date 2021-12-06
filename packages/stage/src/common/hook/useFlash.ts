@@ -32,7 +32,7 @@ export const showFlash = async (
 };
 
 // TODO: COZE: how to solve unused var error?
-// similar question: https://stackoverflow.com/questions/63767199/typescript-eslint-no-unused-vars-false-positive-in-type-declarations
+// use ts-eslint-plugin. see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-unused-vars.md
 function useFlash(): {
   showSuccessMessage: (messsage: string) => void; // eslint-disable-line no-unused-vars
   showErrorMessage: (value: string | unknown, defaultMessage?: string) => void; // eslint-disable-line no-unused-vars

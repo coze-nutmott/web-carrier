@@ -13,15 +13,25 @@ import Button from 'common/component/Button';
 import Flex, { Column } from 'common/component/Flex';
 import Input from 'common/component/Input';
 import Label from 'common/component/Label';
+import ProfileImageUploader from 'common/component/ProfileImageUploader';
 import SEO from 'common/component/SEO';
 import Text from 'common/component/Text';
 import Wrapper from 'common/component/Wrapper';
+import useAlert from 'common/hook/useAlert';
 import useConfirm from 'common/hook/useConfirm';
+import useConfirmRouteChangeIf from 'common/hook/useConfirmRouteChangeIf';
 import useFlash from 'common/hook/useFlash';
-import { IErrorResponse, INickname, IProfileFormValues } from 'common/type';
+import {
+  IErrorResponse,
+  IFile,
+  INickname,
+  IProfileFormValues,
+} from 'common/type';
 import { isAxiosError } from 'common/util/axios';
 import { ERROR_MESSAGES } from 'common/util/errorMessage';
 import { kRouter, Page } from 'common/util/kRouter';
+import NewNicknameModal from 'nickname/component/Modal/NewNicknameModal';
+import ProfileNicknameSelectModal from 'nickname/component/ProfileNicknameSelectModal';
 import useKakaopageNickname from 'nickname/hook/useKakaopageNickname';
 import useMyNicknames from 'nickname/hook/useMyNicknames';
 import usePossibleNewNickname from 'nickname/hook/usePossibleNewNickname';
@@ -36,11 +46,13 @@ interface IQuery {
   fromWorkshop: string;
 }
 
+// TODO: COZE: implement below
 // export default NeedLoginRoute(ProfilePage);
 export default function ProfilePage() {
-  // const { Alert, alert } = useAlert();
+  const { Alert, alert } = useAlert();
   const { confirm, Confirm } = useConfirm();
 
+  // TODO: COZE: check if router.query works well
   const param = useQueryParameter<IQuery>([
     { name: 'fromWorkshop', getter: getStringOptional },
   ]);
@@ -52,9 +64,9 @@ export default function ProfilePage() {
 
   const isFormDirty = formState.isDirty;
 
-  // useConfirmRouteChangeIf(isFormDirty, () => {
-  //   return confirmChangeIsNotSaved();
-  // });
+  useConfirmRouteChangeIf(isFormDirty, () => {
+    return confirmChangeIsNotSaved();
+  });
 
   const [showProfileNicknameSelectModal, setShowProfileNicknameSelectModal] =
     useState(false);
@@ -381,7 +393,7 @@ export default function ProfilePage() {
           <Flex className="justify-center">
             <input hidden name="profileId" ref={register} />
             <ProfileImageUploader
-              onChanged={(image: File | undefined) => {
+              onChanged={(image: IFile | undefined) => {
                 setValue('profileId', image?.id.toString(), {
                   shouldDirty: true,
                 });
@@ -546,6 +558,30 @@ export default function ProfilePage() {
           </Column>
         </Column>
       </Wrapper>
+
+      {showNewNicknameModal && (
+        <NewNicknameModal
+          close={() => setShowNewNicknameModal(false)}
+          onInputNickname={(nickname: string) => {
+            checkNickname({ nickname }, true);
+          }}
+        />
+      )}
+
+      {showProfileNicknameSelectModal && myNicknames && (
+        <ProfileNicknameSelectModal
+          currentNickname={selectedNickname}
+          nicknames={myNicknames}
+          close={() => setShowProfileNicknameSelectModal(false)}
+          onSelected={nickname => {
+            handleNicknameSelected(nickname);
+            setShowProfileNicknameSelectModal(false);
+          }}
+        />
+      )}
+
+      <Alert />
+      <Confirm />
     </>
   );
 }

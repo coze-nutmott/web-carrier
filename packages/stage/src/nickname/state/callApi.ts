@@ -1,6 +1,6 @@
 // state와 관련이 있지는 않으나 api 관련 함수들을 이 파일로 모음
 
-import { INickname, IResultResponse } from 'common/type';
+import { IFile, INickname, IResultResponse } from 'common/type';
 import callApi from 'common/util/api';
 
 export const createNickname = async (
@@ -23,7 +23,7 @@ export const updateNickname = async (
   nicknameId: string | number,
   isKakaopageNickname: boolean,
   name?: string,
-  profileId?: string | string,
+  profileId?: string,
 ): Promise<INickname> => {
   return callApi({
     method: 'put',
@@ -45,7 +45,7 @@ export const removeNickname = async (
   });
 };
 
-export const uploadProfileImage = async (dataUrl: string): Promise<File> => {
+export const uploadProfileImage = async (dataUrl: string): Promise<IFile> => {
   return callApi({
     method: 'patch',
     url: '/users/nicknames/profiles',
