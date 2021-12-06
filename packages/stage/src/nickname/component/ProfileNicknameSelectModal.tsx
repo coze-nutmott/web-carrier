@@ -9,7 +9,7 @@ import { INickname } from 'common/type';
 
 interface IProps {
   close: () => void;
-  onSelected: (nickname: INickname) => void; // eslint-disable-line no-unused-vars
+  onSelected: (nickname: INickname) => void;
   nicknames: INickname[];
   currentNickname?: INickname;
 }

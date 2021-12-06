@@ -5,7 +5,7 @@ import Flex from 'common/component/Flex';
 import Modal from 'common/component/Modals/Modal';
 
 interface IUseAlertReturn {
-  alert: (message: string) => void; // eslint-disable-line no-unused-vars
+  alert: (message: string) => void;
   Alert: () => JSX.Element;
 }
 

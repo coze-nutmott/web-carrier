@@ -16,8 +16,8 @@ import ImageIcon from '@/images/icons-image.svg';
 import PointIcon from '@/images/icons-point.svg';
 
 interface IProps extends HTMLProps<HTMLDivElement> {
-  onChanged: (image: IFile | undefined) => void; // eslint-disable-line no-unused-vars
-  onUpload?: (isUploading: boolean) => void; // eslint-disable-line no-unused-vars
+  onChanged: (image: IFile | undefined) => void;
+  onUpload?: (isUploading: boolean) => void;
   defaultImage?: string;
 }
 
@@ -122,8 +122,8 @@ export default function ProfileImageUploader({
 
 interface IUseProfileImageUploaderParams {
   defaultImage?: string;
-  onChanged: (image: IFile | undefined) => void; // eslint-disable-line no-unused-vars
-  onUpload?: (isUploading: boolean) => void; // eslint-disable-line no-unused-vars
+  onChanged: (image: IFile | undefined) => void;
+  onUpload?: (isUploading: boolean) => void;
 }
 
 function useProfileImageUploader({

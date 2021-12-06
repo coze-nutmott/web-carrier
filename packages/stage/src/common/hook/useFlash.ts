@@ -31,11 +31,9 @@ export const showFlash = async (
   dispatch(commonActions.popFlash());
 };
 
-// TODO: COZE: how to solve unused var error?
-// use ts-eslint-plugin. see https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/no-unused-vars.md
 function useFlash(): {
-  showSuccessMessage: (messsage: string) => void; // eslint-disable-line no-unused-vars
-  showErrorMessage: (value: string | unknown, defaultMessage?: string) => void; // eslint-disable-line no-unused-vars
+  showSuccessMessage: (messsage: string) => void;
+  showErrorMessage: (value: string | unknown, defaultMessage?: string) => void;
 } {
   const dispatch = useDispatch();
 

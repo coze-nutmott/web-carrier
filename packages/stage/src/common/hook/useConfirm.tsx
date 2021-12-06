@@ -14,16 +14,15 @@ interface IConfirmOptions {
   cancelLabel: string;
 }
 
-// TODO: COZE: how to solve unused-vars error?
 interface IUseConfirmReturn {
   confirm: (
-    message: string, // eslint-disable-line no-unused-vars
-    options?: Partial<IConfirmOptions>, // eslint-disable-line no-unused-vars
+    message: string,
+    options?: Partial<IConfirmOptions>,
   ) => Promise<boolean>;
   Confirm: () => JSX.Element;
 }
 
-let conf: (value: boolean) => void; // eslint-disable-line no-unused-vars
+let conf: (value: boolean) => void;
 
 const defaultOptions: IConfirmOptions = {
   confirmLabel: '확인',

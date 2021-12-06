@@ -8,7 +8,7 @@ import Text from 'common/component/Text';
 
 interface IProps {
   close: () => void;
-  onInputNickname: (nickname: string) => void; // eslint-disable-line no-unused-vars
+  onInputNickname: (nickname: string) => void;
 }
 
 export default function NewNicknameModal({ close, onInputNickname }: IProps) {

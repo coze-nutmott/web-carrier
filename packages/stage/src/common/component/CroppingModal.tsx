@@ -20,7 +20,7 @@ const IMAGE_OPTION: Partial<fabric.Image> = {
 interface IProps {
   file?: File; // not IFile
   onCancel: () => void;
-  onComplete: (dataUrl: string) => void; // eslint-disable-line no-unused-vars
+  onComplete: (dataUrl: string) => void;
   smallCanvas?: boolean;
 }
 
