@@ -3,7 +3,7 @@ module.exports = {
   rules: {
     '@next/next/no-img-element': 0,
     'no-unused-vars': 'off',
-    '@typescript-eslint/no-unused-vars': ['error'],
+    '@typescript-eslint/no-unused-vars': 'error',
     'no-console': 'error',
   },
 };

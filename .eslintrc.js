@@ -1,7 +1,6 @@
 module.exports = {
   extends: ['plugin:prettier/recommended', 'next/core-web-vitals'],
   plugins: ['kakaoent-plugin', 'prettier', '@typescript-eslint'],
-  // parser: '@typescript-eslint/parser',
   rules: {
     'kakaoent-plugin/no-date': 'error',
     'kakaoent-plugin/no-next-router': 'error',
