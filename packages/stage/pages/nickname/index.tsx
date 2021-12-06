@@ -380,15 +380,15 @@ export default function ProfilePage() {
         <Column className="w-330">
           <Flex className="justify-center">
             <input hidden name="profileId" ref={register} />
-            {/*<ProfileImageUploader*/}
-            {/*  onChanged={(image: File | undefined) => {*/}
-            {/*    setValue('profileId', image?.id.toString(), {*/}
-            {/*      shouldDirty: true,*/}
-            {/*    });*/}
-            {/*    setProfileImageUrl(image?.url);*/}
-            {/*  }}*/}
-            {/*  defaultImage={profileImageUrl}*/}
-            {/*/>*/}
+            <ProfileImageUploader
+              onChanged={(image: File | undefined) => {
+                setValue('profileId', image?.id.toString(), {
+                  shouldDirty: true,
+                });
+                setProfileImageUrl(image?.url);
+              }}
+              defaultImage={profileImageUrl}
+            />
           </Flex>
           <Flex
             className="w-full pt-20 justify-center items-center"
