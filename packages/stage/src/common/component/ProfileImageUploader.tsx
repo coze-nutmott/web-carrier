@@ -139,7 +139,7 @@ function useProfileImageUploader({
     if (defaultImage) {
       setImage(defaultImage);
     } else {
-      setImage('/images/img-dummy-profile.png');
+      setImage('/static/images/img-dummy-profile.png');
     }
   }, [defaultImage]);
 
@@ -162,7 +162,7 @@ function useProfileImageUploader({
   };
 
   const deleteImage = () => {
-    setImage('/images/img-dummy-profile.png');
+    setImage('/static/images/img-dummy-profile.png');
     onChanged(undefined);
   };
 

@@ -14,9 +14,10 @@ export default function useConfirmRouteChangeIf(
   confirmRouteChange: () => boolean,
 ): void {
   const router = useRouter();
-  // @ts-ignore
-  const isIOS =
-    /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+  // TODO: COZE: 서버사이드에서 확인이 됨.
+  const isIOS = false;
+  // const isIOS =
+  //   /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
 
   useEffect(() => {
     const routeChangeStart = (url: string) => {
