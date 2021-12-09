@@ -8,6 +8,7 @@ import styles from './variable.module.scss';
 export const ZIndex = {
   Loading: Number(styles.Z_INDEX_LOADING),
   Modal: Number(styles.Z_INDEX_MODAL),
+  PointIcon: Number(styles.Z_INDEX_POINT_ICON),
   Toast: Number(styles.Z_INDEX_TOAST),
   SelectDropdown: Number(styles.Z_INDEX_SELECT_DROPDOWN),
 };

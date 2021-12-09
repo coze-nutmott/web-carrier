@@ -1,4 +1,8 @@
-import { useState, useRef, ChangeEvent, useEffect, HTMLProps } from 'react';
+import { useState, useRef, ChangeEvent, useEffect } from 'react';
+
+import DeleteIcon from '@icons/icons-delete.svg';
+import ImageIcon from '@icons/icons-image.svg';
+import PointIcon from '@icons/icons-point.svg';
 
 import Button from 'common/component/Button';
 import CroppingModal from 'common/component/CroppingModal';
@@ -7,15 +11,12 @@ import Flex from 'common/component/Flex';
 import Placeholder from 'common/component/Placeholder';
 import useFlash from 'common/hook/useFlash';
 import useMedia from 'common/hook/useMedia';
+import { ZIndex } from 'common/style/variable';
 import { IFile } from 'common/type';
 import { ERROR_MESSAGES } from 'common/util/errorMessage';
-import { uploadProfileImage } from 'nickname/state/callApi';
+import { uploadProfileImage } from 'nickname/state/server';
 
-import DeleteIcon from '@icons/icons-delete.svg';
-import ImageIcon from '@icons/icons-image.svg';
-import PointIcon from '@icons/icons-point.svg';
-
-interface IProps extends HTMLProps<HTMLDivElement> {
+interface IProps {
   onChanged: (image: IFile | undefined) => void;
   onUpload?: (isUploading: boolean) => void;
   defaultImage?: string;
@@ -25,8 +26,6 @@ export default function ProfileImageUploader({
   onChanged,
   onUpload,
   defaultImage,
-  className,
-  ...props
 }: IProps) {
   const isDesktop = useMedia('desktop');
   const [showMiniMenu, setShowMiniMenu] = useState(false);
@@ -38,7 +37,7 @@ export default function ProfileImageUploader({
     setShowMiniMenu(false);
   };
 
-  const onImageSelected = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleImageSelected = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
 
     if (files && files[0]) {
@@ -52,14 +51,14 @@ export default function ProfileImageUploader({
     }
   };
 
-  const onCancelCrop = () => {
+  const handleCancelCrop = () => {
     if (confirm('프로필 이미지 등록을 취소하시겠습니까?')) {
       clearHiddenFileInput();
       setSelectedFile(undefined);
     }
   };
 
-  const onUploadComplete = (image: IFile | undefined) => {
+  const handleUploadComplete = (image: IFile | undefined) => {
     clearHiddenFileInput();
     setSelectedFile(undefined);
     onChanged(image);
@@ -67,26 +66,29 @@ export default function ProfileImageUploader({
 
   const { uploadImage, deleteImage, image } = useProfileImageUploader({
     defaultImage,
-    onChanged: onUploadComplete,
+    onChanged: handleUploadComplete,
     onUpload,
   });
 
   return (
-    <div className={className} {...props}>
+    <div>
       <Placeholder onClick={() => setShowMiniMenu(prev => !prev)} src={image} />
       <input
         hidden
         ref={hiddenFileInput}
         type="file"
         accept="image/jpeg, image/png"
-        onChange={onImageSelected}
+        onChange={handleImageSelected}
       />
       {showMiniMenu && (
         <Flex className="relative">
-          <div className="absolute right-45 z-[100]">
+          <div
+            className="absolute right-45"
+            style={{ zIndex: ZIndex.PointIcon }}
+          >
             <PointIcon />
           </div>
-          <Dropdown className="absolute w-122 top-15 right-[-9px] z-1">
+          <Dropdown className="absolute w-122 top-15 -right-9 z-1">
             <Button variant="borderless" size="text" onClick={handleFileSelect}>
               <Flex className="text-14">
                 <div className="w-12 h-12 text-gray mr-2">
@@ -112,7 +114,7 @@ export default function ProfileImageUploader({
         <CroppingModal
           file={selectedFile}
           onComplete={uploadImage}
-          onCancel={onCancelCrop}
+          onCancel={handleCancelCrop}
           smallCanvas={!isDesktop}
         />
       )}

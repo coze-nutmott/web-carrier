@@ -40,7 +40,7 @@ import {
   getDuplicate,
   removeNickname,
   updateNickname,
-} from 'nickname/state/callApi';
+} from 'nickname/state/server';
 
 interface IQuery {
   fromWorkshop: string;
@@ -403,12 +403,10 @@ export default function ProfilePage() {
             />
           </Flex>
           <Flex
-            className="w-full pt-20 justify-center items-center"
-            style={{
-              paddingTop: selectedNickname?.kakaopageNicknameFlag
-                ? '40px'
-                : '20px',
-            }}
+            className={cn(
+              'w-full pt-20 justify-center items-center',
+              selectedNickname?.kakaopageNicknameFlag ? 'pt-40' : 'pt-20',
+            )}
           >
             <div className="relative">
               <Column>

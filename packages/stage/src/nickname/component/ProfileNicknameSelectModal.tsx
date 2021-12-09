@@ -42,11 +42,12 @@ export default function ProfileNicknameSelectModal({
                 />
 
                 <Text
-                  className="ml-12 w-full text-16 text-black"
-                  style={{
-                    fontWeight:
-                      nickname.id === currentNickname?.id ? 'bold' : 'normal',
-                  }}
+                  className={cn(
+                    'ml-12 w-full text-16 text-black',
+                    nickname.id === currentNickname?.id
+                      ? 'font-bold'
+                      : 'font-normal',
+                  )}
                 >
                   <Flex>
                     <div>{nickname.name}</div>

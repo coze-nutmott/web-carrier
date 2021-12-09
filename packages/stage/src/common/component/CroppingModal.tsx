@@ -82,13 +82,13 @@ export default function CroppingModal({
   return (
     <Modal width="600px" closeOutside={onCancel}>
       <div>
-        <div className="pt-12 pr-20 pb-16 desktop:py-24 desktop:px-30">
+        <div className="pt-12 px-20 pb-16 desktop:py-24 desktop:px-30">
           <div className="text-20 desktop:text-24 font-bold m-0">
             프로필 이미지 편집
           </div>
         </div>
 
-        <Flex className="border-t-1 border-solid border-divideLine justify-center p-20">
+        <Flex className="border-t-1 border-b-1 border-solid border-divideLine bg-divideArea justify-center p-20">
           <div className="relative border-1 border-solid border-divideLine bg-white overflow-hidden">
             <canvas
               id="profile"

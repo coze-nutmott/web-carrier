@@ -24,11 +24,11 @@ export default function NewNicknameModal({ close, onInputNickname }: IProps) {
     <Modal closeOutside={close}>
       <Flex as="form" onSubmit={handleSubmit(handleSubmitNickname)}>
         <Column className="px-24 pt-24 pb-32 w-full">
-          <Text className="text-16 font-medium">새 닉네임 추가</Text>
+          <Text className="text-16 font-medium text-black">새 닉네임 추가</Text>
           <Text className="mt-16 mb-8 text-14 font-normal text-black">
             닉네임
           </Text>
-          <Flex className="rounded-2 border-1 border-solid border-diviceLine">
+          <Flex className="rounded-2 border-1 border-solid border-divideLine">
             <Input
               className="w-full h-40 bg-white resize-none outline-none rounded-0 border-0 border-[#cfcfcf]"
               name="nickname"

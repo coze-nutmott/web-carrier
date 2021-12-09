@@ -83,7 +83,7 @@ export default function useConfirm(): IUseConfirmReturn {
         <div className="px-30 pt-44 pb-30">
           <div className="text-center">
             <Icon />
-            <div className="mt-16">
+            <div className="mt-14">
               {msg.split('\n').map((line, idx) => (
                 <div key={idx}>{line}</div>
               ))}
