@@ -585,6 +585,7 @@ export default function ProfilePage() {
 }
 
 function confirmChangeIsNotSaved() {
+  // TODO: COZE: replace to shared/confirm
   // eslint-disable-next-line no-alert
   return window.confirm('입력한 내용이 저장되지 않습니다. 계속하시겠습니까?');
 }
