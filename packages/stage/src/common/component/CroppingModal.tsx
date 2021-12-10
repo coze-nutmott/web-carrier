@@ -30,19 +30,8 @@ export default function CroppingModal({
   onCancel,
   smallCanvas = false,
 }: IProps) {
-  const canvasSize = useCallback(() => {
-    if (smallCanvas) {
-      return {
-        width: 300,
-        height: 300,
-      };
-    }
-
-    return {
-      width: 400,
-      height: 400,
-    };
-  }, [smallCanvas]);
+  const width = smallCanvas ? 300 : 400;
+  const height = smallCanvas ? 300 : 400;
 
   const [canvas, setCanvas] = useState<fabric.Canvas>();
 
@@ -59,15 +48,15 @@ export default function CroppingModal({
       const result = await fileToDataURL(file);
       fabric.Image.fromURL(result, img => {
         img.selectable = true;
-        img.scaleToHeight(canvasSize().height);
-        img.scaleToWidth(canvasSize().width);
+        img.scaleToHeight(height);
+        img.scaleToWidth(width);
         img.set(IMAGE_OPTION);
         canvas.add(img);
         canvas.setActiveObject(img);
       });
     }
     loadFileToCanvas();
-  }, [file, canvas, canvasSize]);
+  }, [file, canvas, width, height]);
 
   const handleConfirm = () => {
     if (canvas) {
@@ -90,11 +79,7 @@ export default function CroppingModal({
 
         <Flex className="border-t-1 border-b-1 border-solid border-divideLine bg-divideArea justify-center p-20">
           <div className="relative border-1 border-solid border-divideLine bg-white overflow-hidden">
-            <canvas
-              id="profile"
-              width={canvasSize().width}
-              height={canvasSize().height}
-            />
+            <canvas id="profile" width={width} height={height} />
           </div>
         </Flex>
 
